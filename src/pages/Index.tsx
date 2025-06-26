@@ -11,6 +11,7 @@ import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +27,18 @@ const Index = () => {
           element.classList.add('visible');
         }
       });
+
+      // Update active section based on scroll position
+      const sections = ['hero', 'featured', 'testimonials', 'how-it-works', 'features', 'mission', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
+        if (element && scrollPosition >= element.offsetTop) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -35,8 +48,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-black to-slate-900">
-      <Navigation />
+    <div className="min-h-screen">
+      <Navigation activeSection={activeSection} />
       
       <main className="relative">
         <HeroSection scrollY={scrollY} />

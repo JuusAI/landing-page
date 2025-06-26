@@ -1,7 +1,11 @@
 
 import { useState, useEffect } from 'react';
 
-const Navigation = () => {
+interface NavigationProps {
+  activeSection: string;
+}
+
+const Navigation = ({ activeSection }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -15,16 +19,16 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Services', href: '#how-it-works' },
-    { name: 'Work', href: '#features' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#hero', id: 'hero' },
+    { name: 'Services', href: '#how-it-works', id: 'how-it-works' },
+    { name: 'Work', href: '#features', id: 'features' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'blur-background border-b border-white/10' : 'bg-transparent'
+        isScrolled ? 'blur-background' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -42,7 +46,11 @@ const Navigation = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-white/80 hover:text-white px-3 py-2 text-sm font-light tracking-tight transition-colors duration-200"
+                    className={`nav-glow px-3 py-2 text-sm font-light tracking-tight transition-colors duration-200 ${
+                      activeSection === item.id 
+                        ? 'text-gray-900 active' 
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
                   >
                     {item.name}
                   </a>
@@ -58,9 +66,9 @@ const Navigation = () => {
                 aria-label="Toggle menu"
               >
                 <div className="w-6 h-5 relative flex flex-col justify-between">
-                  <span className="burger-line w-full h-0.5 bg-white block"></span>
-                  <span className="burger-line w-full h-0.5 bg-white block"></span>
-                  <span className="burger-line w-full h-0.5 bg-white block"></span>
+                  <span className="burger-line w-full h-0.5 bg-gray-700 block"></span>
+                  <span className="burger-line w-full h-0.5 bg-gray-700 block"></span>
+                  <span className="burger-line w-full h-0.5 bg-gray-700 block"></span>
                 </div>
               </button>
             </div>
@@ -77,7 +85,7 @@ const Navigation = () => {
       )}
 
       {/* Mobile Menu Tray */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-black/90 backdrop-blur-xl border-l border-white/10 z-50 transform transition-transform duration-300 md:hidden ${
+      <div className={`fixed top-0 right-0 h-full w-80 bg-white/95 backdrop-blur-xl border-l border-gray-200 z-50 transform transition-transform duration-300 md:hidden ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <div className="p-6 pt-20">
@@ -86,7 +94,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block text-white/80 hover:text-white text-lg font-light tracking-tight transition-colors duration-200"
+                className="block text-gray-600 hover:text-gray-900 text-lg font-light tracking-tight transition-colors duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}

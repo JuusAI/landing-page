@@ -22,13 +22,13 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-32 px-4 relative">
+    <section id="how-it-works" className="py-32 px-4 relative futuristic-bg-alt section-stack section-overlap">
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             How <span className="text-gradient">It Works</span>
           </h2>
-          <p className="text-xl font-light text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
             Three simple steps to revolutionize your business with AI automation
           </p>
         </div>
@@ -37,7 +37,7 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="glass-card p-8 hover:bg-white/10 transition-all duration-500 group scroll-fade"
+              className="glass-card p-8 hover:bg-white/15 transition-all duration-500 group scroll-fade"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Image */}
@@ -47,7 +47,7 @@ const HowItWorksSection = () => {
                   alt={step.title}
                   className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
 
               {/* Icon */}
@@ -57,22 +57,22 @@ const HowItWorksSection = () => {
 
               {/* Content */}
               <div className="mb-4">
-                <span className="text-sm font-light text-blue-400 tracking-wider uppercase">
+                <span className="text-sm font-light text-blue-600 tracking-wider uppercase">
                   Step {index + 1}
                 </span>
               </div>
               
-              <h3 className="text-2xl font-medium text-white mb-4 tracking-tight">
+              <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">
                 {step.title}
               </h3>
               
-              <p className="text-white/60 font-light leading-relaxed">
+              <p className="text-gray-600 font-light leading-relaxed">
                 {step.description}
               </p>
 
               {/* Arrow for flow */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-white/20">
+                <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-gray-300">
                   <i className="ph-light ph-arrow-right text-2xl"></i>
                 </div>
               )}

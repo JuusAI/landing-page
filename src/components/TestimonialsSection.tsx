@@ -48,13 +48,13 @@ const TestimonialsSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-32 px-4 relative">
+    <section id="testimonials" className="py-32 px-4 relative futuristic-bg section-stack section-overlap">
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             Trusted by <span className="text-gradient">Industry Leaders</span>
           </h2>
-          <p className="text-xl font-light text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
             See how businesses are transforming with Juus AI automation
           </p>
         </div>
@@ -72,20 +72,20 @@ const TestimonialsSection = () => {
                   {testimonials[currentIndex].avatar}
                 </div>
                 <div>
-                  <h3 className="text-xl font-medium text-white mb-1">
+                  <h3 className="text-xl font-medium text-gray-900 mb-1">
                     {testimonials[currentIndex].name}
                   </h3>
-                  <p className="text-white/60 font-light">
+                  <p className="text-gray-600 font-light">
                     {testimonials[currentIndex].role} • {testimonials[currentIndex].company}
                   </p>
                 </div>
               </div>
 
-              <blockquote className="text-2xl md:text-3xl font-light text-white/90 leading-relaxed mb-8">
+              <blockquote className="text-2xl md:text-3xl font-light text-gray-800 leading-relaxed mb-8">
                 "{testimonials[currentIndex].testimonial}"
               </blockquote>
 
-              <div className="inline-block px-6 py-3 bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
+              <div className="inline-block px-6 py-3 bg-green-500/20 text-green-600 rounded-full border border-green-500/30">
                 <i className="ph-light ph-trend-up mr-2"></i>
                 {testimonials[currentIndex].result}
               </div>
@@ -101,7 +101,7 @@ const TestimonialsSection = () => {
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex 
                     ? 'bg-blue-500 scale-125' 
-                    : 'bg-white/30 hover:bg-white/50'
+                    : 'bg-gray-400 hover:bg-gray-500'
                 }`}
               />
             ))}

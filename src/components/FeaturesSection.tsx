@@ -19,13 +19,13 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-32 px-4 relative">
+    <section id="features" className="py-32 px-4 relative futuristic-bg section-stack section-overlap">
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             Powerful <span className="text-gradient">Features</span>
           </h2>
-          <p className="text-xl font-light text-white/60 max-w-2xl mx-auto">
+          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
             Everything you need to automate, optimize, and scale your business operations
           </p>
         </div>
@@ -34,7 +34,7 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="glass-card p-8 text-center hover:bg-white/10 transition-all duration-500 group scroll-fade"
+              className="glass-card p-8 text-center hover:bg-white/15 transition-all duration-500 group scroll-fade"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Icon */}
@@ -43,11 +43,11 @@ const FeaturesSection = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-medium text-white mb-4 tracking-tight">
+              <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">
                 {feature.title}
               </h3>
               
-              <p className="text-white/60 font-light leading-relaxed">
+              <p className="text-gray-600 font-light leading-relaxed">
                 {feature.description}
               </p>
             </div>
