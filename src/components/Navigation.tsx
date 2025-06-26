@@ -31,7 +31,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
         isScrolled ? 'blur-background' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 relative">
+          <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
               <h1 className="text-2xl font-semibold text-gradient tracking-tight">
@@ -71,28 +71,6 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                   <span className="burger-line w-full h-0.5 bg-gray-700 block"></span>
                 </div>
               </button>
-            </div>
-
-            {/* Active section glow underline positioned at bottom of header */}
-            <div className="absolute bottom-0 left-0 right-0 h-px">
-              <div 
-                className={`absolute bottom-0 transition-all duration-300 ease-out ${
-                  activeSection ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-                }`}
-                style={{
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '120px',
-                  height: '3px',
-                  background: 'linear-gradient(90deg, transparent 0%, #FFD580 20%, #FFB84D 50%, #FFD580 80%, transparent 100%)',
-                  borderRadius: '2px',
-                  boxShadow: `
-                    0 0 12px rgba(255, 213, 128, 0.6),
-                    0 0 24px rgba(255, 184, 77, 0.4),
-                    0 0 36px rgba(255, 165, 0, 0.2)
-                  `,
-                }}
-              />
             </div>
           </div>
         </div>
