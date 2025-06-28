@@ -18,11 +18,12 @@ const HeroSection = () => {
       {
         y: 0,
         opacity: 1,
+        visibility: "visible",
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 30%",
+          start: "top 20%",
           toggleActions: "play reverse play reverse",
         },
       }
@@ -60,7 +61,7 @@ const HeroSection = () => {
       </div>
       <div
         ref={titleRef}
-        className="relative z-10 text-left mx-16 max-w-6xl animate-fade-in-up"
+        className="invisible relative z-10 text-left mx-16 max-w-6xl animate-fade-in-up"
       >
         <div className="mb-6">
           <span className="inline-block px-4 py-2 bg-blue-500/20 text-blue-600 rounded-full text-sm font-light tracking-tight border border-blue-500/30">
