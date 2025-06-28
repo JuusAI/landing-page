@@ -1,30 +1,43 @@
-
 const HowItWorksSection = () => {
   const steps = [
     {
-      icon: 'ph-light ph-gear-six',
-      title: 'Automation',
-      description: 'Set up intelligent automation workflows that handle repetitive tasks, freeing up your time for strategic decisions.',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop&crop=center'
+      icon: "ph-light ph-gear-six",
+      title: "Automation",
+      description:
+        "Set up intelligent automation workflows that handle repetitive tasks, freeing up your time for strategic decisions.",
+      image:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop&crop=center",
     },
     {
-      icon: 'ph-light ph-robot',
-      title: 'AI Assistant Setup',
-      description: 'Configure your personal AI assistant with custom knowledge and capabilities tailored to your business needs.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center'
+      icon: "ph-light ph-robot",
+      title: "AI Assistant Setup",
+      description:
+        "Configure your personal AI assistant with custom knowledge and capabilities tailored to your business needs.",
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center",
     },
     {
-      icon: 'ph-light ph-trending-up',
-      title: 'Automate Trading',
-      description: 'Deploy sophisticated trading algorithms that make data-driven decisions and optimize your investment portfolio.',
-      image: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop&crop=center'
-    }
+      icon: "ph-light ph-trending-up",
+      title: "Automate Trading",
+      description:
+        "Deploy sophisticated trading algorithms that make data-driven decisions and optimize your investment portfolio.",
+      image:
+        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop&crop=center",
+    },
   ];
 
   return (
-    <section id="how-it-works" className="py-32 px-4 relative futuristic-bg-alt section-stack section-overlap">
+    <section
+      id="how-it-works"
+      className="panel min-h-screen py-48 px-4 relative futuristic-bg-alt"
+    >
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="text-center mb-20">
+          <div className="mb-6">
+            <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-600 rounded-full text-sm font-light tracking-tight border border-purple-500/30">
+              What We Do
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             How <span className="text-gradient">It Works</span>
           </h2>
@@ -61,11 +74,11 @@ const HowItWorksSection = () => {
                   Step {index + 1}
                 </span>
               </div>
-              
+
               <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">
                 {step.title}
               </h3>
-              
+
               <p className="text-gray-600 font-light leading-relaxed">
                 {step.description}
               </p>
