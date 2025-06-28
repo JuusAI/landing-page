@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const FeaturesSection = () => {
   const cardsRef = useRef([]);
@@ -55,12 +55,12 @@ const FeaturesSection = () => {
       className="panel min-h-screen py-48 px-4 relative futuristic-bg"
     >
       <div className="max-w-7xl mx-auto scroll-fade">
-        <div className="mb-6">
+        <div className="mb-6 text-center md:text-left">
           <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-600 rounded-full text-sm font-light tracking-tight border border-purple-500/30">
             What We Offer
           </span>
         </div>
-        <div className="flex text-center md:text-left mb-20">
+        <div className="md:flex text-center md:text-left mb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             DISCOVER OUR <br />
             <span className="text-gradient">SERVICES</span>

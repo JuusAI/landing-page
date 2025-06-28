@@ -118,6 +118,13 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                 {item.name}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="block text-gray-600 hover:text-gray-900 text-lg font-light tracking-tight transition-colors duration-200"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              CONTACT
+            </a>
           </div>
         </div>
       </div>

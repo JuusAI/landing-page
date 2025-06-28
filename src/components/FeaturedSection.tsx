@@ -1,10 +1,38 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 const FeaturedSection = () => {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+
+  useGSAP(() => {
+    const section = sectionRef.current;
+    const title = titleRef.current;
+
+    gsap.fromTo(
+      title,
+      { y: 300 },
+      {
+        y: -150,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom", // when section top hits bottom of viewport
+          end: "bottom top 50%", // until section bottom hits top of viewport
+          scrub: true, // enables parallax effect synced to scroll
+        },
+      }
+    );
+  });
+
   return (
     <section
       id="featured"
-      className="panel min-h-[50vh] py-20 px-4 relative futuristic-bg-alt"
+      ref={sectionRef}
+      className="md:block hidden panel min-h-[50vh] py-20 px-4 relative futuristic-bg-alt"
     >
-      <div className="max-w-7xl mx-auto scroll-fade">
+      <div ref={titleRef} className="max-w-7xl mx-auto scroll-fade">
         <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center text-center md:text-left my-16">
           <h1 className="text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter mb-8 leading-tight text-gray-900">
             <span className="text-gradient text">Growing</span>
@@ -12,8 +40,9 @@ const FeaturedSection = () => {
             Smarter With<span className="text-gradient"> AI</span>
           </h1>
           <p className="text-xl md:text-2xl font-light text-gray-600 mb-12 mx-auto md:mx-0 md:ml-24 max-w-3xl leading-relaxed">
-            We specialized in workflow automation and <br /> personalized AI
-            solutions for progressive <br /> organizations.
+            We specialized in workflow automation and <br />
+            personalized AI solutions for progressive <br />
+            organizations.
           </p>
         </div>
 
