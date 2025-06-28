@@ -1,4 +1,11 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
+
 const FeaturesSection = () => {
+  const cardsRef = useRef([]);
+  const sectionRef = useRef(null);
+
   const features = [
     {
       icon: "ph-light ph-lightning",
@@ -20,19 +27,46 @@ const FeaturesSection = () => {
     },
   ];
 
+  useGSAP(() => {
+    if (cardsRef.current.length) {
+      gsap.fromTo(
+        cardsRef.current,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    }
+  });
+
   return (
     <section
       id="features"
+      ref={sectionRef}
       className="panel min-h-screen py-48 px-4 relative futuristic-bg"
     >
       <div className="max-w-7xl mx-auto scroll-fade">
-        <div className="text-center mb-20">
+        <div className="mb-6">
+          <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-600 rounded-full text-sm font-light tracking-tight border border-purple-500/30">
+            What We Offer
+          </span>
+        </div>
+        <div className="flex text-center md:text-left mb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
-            Powerful <span className="text-gradient">Features</span>
+            DISCOVER OUR <br />
+            <span className="text-gradient">SERVICES</span>
           </h2>
-          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
-            Everything you need to automate, optimize, and scale your business
-            operations
+          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto md:mx-0 md:ml-24">
+            We deliver complete AI automation <br /> services under one roof.
           </p>
         </div>
 
@@ -40,8 +74,8 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="glass-card p-8 text-center hover:bg-white/15 transition-all duration-500 group scroll-fade"
-              style={{ animationDelay: `${index * 150}ms` }}
+              ref={(el) => (cardsRef.current[index] = el)}
+              className="glass-card p-8 text-center hover:bg-white/15 group"
             >
               {/* Icon */}
               <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">

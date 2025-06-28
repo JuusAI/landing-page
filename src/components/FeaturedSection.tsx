@@ -1,17 +1,10 @@
 const FeaturedSection = () => {
-
   return (
     <section
       id="featured"
       className="panel min-h-[50vh] py-20 px-4 relative futuristic-bg-alt"
     >
       <div className="max-w-7xl mx-auto scroll-fade">
-        {/* <div className="text-center mb-16">
-          <h2 className="text-sm font-light text-gray-500 tracking-wider uppercase mb-8">
-            Featured In
-          </h2>
-        </div> */}
-
         <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center text-center md:text-left my-16">
           <h1 className="text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter mb-8 leading-tight text-gray-900">
             <span className="text-gradient text">Growing</span>
@@ -33,10 +26,6 @@ const FeaturedSection = () => {
             <i className="ph-light ph-rocket-launch mr-2"></i>
             Our Services
           </button>
-          {/* <button className="px-8 py-4 text-gray-600 hover:text-gray-900 font-light tracking-tight transition-colors duration-200 flex items-center">
-            <i className="ph-light ph-play-circle mr-2 text-2xl"></i>
-            Watch Demo
-          </button> */}
         </div>
       </div>
     </section>

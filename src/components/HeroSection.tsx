@@ -1,3 +1,4 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
@@ -6,7 +7,7 @@ const HeroSection = () => {
   const sectionRef = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const title = titleRef.current;
     const section = sectionRef.current;
     const text = textRef.current;
@@ -17,7 +18,7 @@ const HeroSection = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 1.5,
+        duration: 1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: section,
@@ -41,7 +42,7 @@ const HeroSection = () => {
         },
       }
     );
-  }, []);
+  });
 
   return (
     <section
