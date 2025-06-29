@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import Spline from "@splinetool/react-spline";
 
 const HeroSection = () => {
   const titleRef = useRef(null);
@@ -51,6 +52,11 @@ const HeroSection = () => {
       ref={sectionRef}
       className="panel min-h-screen flex flex-col items-center justify-center md:items-start relative overflow-hidden px-4 futuristic-bg"
     >
+      <Spline
+        className="absolute inset-0 -z-10"
+        scene="https://prod.spline.design/ozCkMCdN32fKu7UE/scene.splinecode"
+      />
+
       {/* Content */}
       <div
         ref={textRef}
