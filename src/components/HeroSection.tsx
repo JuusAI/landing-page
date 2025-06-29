@@ -54,7 +54,7 @@ const HeroSection = () => {
       {/* Content */}
       <div
         ref={textRef}
-        className="md:absolute md:left-16 md:top-[20%] font-light text-gray-600"
+        className="hidden md:block md:absolute text-xl md:left-16 md:top-[20%] font-light text-gray-600"
       >
         Helping forward looking companies thrive <br /> with custom AI solutions
         and <br /> automated workflows.

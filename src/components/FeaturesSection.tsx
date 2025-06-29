@@ -52,7 +52,7 @@ const FeaturesSection = () => {
     <section
       id="features"
       ref={sectionRef}
-      className="panel min-h-screen py-48 px-4 relative futuristic-bg"
+      className="panel min-h-screen py-48 px-4 relative futuristic-bg-alt"
     >
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="mb-6 text-center md:text-left">
@@ -65,7 +65,7 @@ const FeaturesSection = () => {
             DISCOVER OUR <br />
             <span className="text-gradient">SERVICES</span>
           </h2>
-          <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto md:mx-0 md:ml-24">
+          <p className="text-xl md:text-2xl font-light text-gray-600 max-w-2xl mx-auto md:mx-0 md:ml-24">
             We deliver complete AI automation <br /> services under one roof.
           </p>
         </div>

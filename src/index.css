@@ -58,28 +58,42 @@
     z-index: 1;
   }
 
+  @media (max-width: 768px) {
+    html {
+      scroll-snap-type: none;
+    }
+
+    section {
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+  }
+
   /* Futuristic gradient backgrounds */
   .futuristic-bg {
-    background: radial-gradient(
-      ellipse at center,
-      hsl(220, 15%, 92%) 0%,
-      /* Soft cool light gray center */ hsl(210, 12%, 88%) 25%,
-      /* Slightly warmer */ hsl(200, 10%, 85%) 50%,
-      /* Desaturated silvery-gray */ hsl(220, 8%, 82%) 75%,
-      /* Cool gray corners */ hsl(240, 6%, 78%) 100%
-        /* Soft cool light gray corners */
-    );
+    background: linear-gradient(135deg, #e8e8ea, #cfd1d4);
+    /* background: radial-gradient( */
+    /* ellipse at center, */
+    /* hsl(220, 15%, 92%) 0%, */
+    /* Soft cool light gray center hsl(210, 12%, 88%) 25%, */
+    /* Slightly warmer hsl(200, 10%, 85%) 50%, */
+    /* Desaturated silvery-gray hsl(220, 8%, 82%) 75%, */
+    /* Cool gray corners hsl(240, 6%, 78%) 100% */
+    /* Soft cool light gray corners */
+    /* ); */
   }
 
   .futuristic-bg-alt {
-    background: radial-gradient(
+    background-color: #d6d6d6;
+    /* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+    /* background: radial-gradient(
       ellipse at center,
       hsl(215, 18%, 90%) 0%,
-      /* Slightly different center */ hsl(205, 15%, 86%) 25%,
-      hsl(195, 12%, 83%) 50%,
-      hsl(215, 10%, 80%) 75%,
-      hsl(235, 8%, 76%) 100%
-    );
+      /* Slightly different center hsl(205, 15%, 86%) 25%, */
+    /* hsl(195, 12%, 83%) 50%, */
+    /* hsl(215, 10%, 80%) 75%, */
+    /* hsl(235, 8%, 76%) 100% */
+    /* ); */
   }
 
   /* Section stacking for overlap effect */
@@ -120,10 +134,118 @@
       0 12px 30px rgba(59, 130, 246, 0.4), 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 
+  .glow-on-hover {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    position: relative;
+    /* overflow: hidden; */
+    outline: none;
+  }
+
+  /* .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  } */
+
+  .glow-on-hover:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 30px;
+  }
+
+  .glow-on-hover:active {
+    color: #000;
+  }
+
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+
+  .glow-on-hover:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  /* 
+.black-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ffe289 0%, rgba(255, 226, 137, 0) 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(10px);
+    z-index: 0;
+  } */
+
+  .black-button:hover {
+    @apply scale-105;
+    animation: normal;
+  }
+
   .transparent-button {
-    @apply relative px-8 py-4 rounded-2xl font-medium border-black text-black bg-transparent transition-all duration-300;
+    @apply relative px-9 py-3 rounded-2xl font-medium border-black text-black bg-transparent transition-all duration-300;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2),
       0 8px 20px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
   }
 
   .blur-background {
