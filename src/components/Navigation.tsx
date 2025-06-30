@@ -21,7 +21,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
     { name: "HOME", href: "#featured", id: "featured" },
     { name: "SERVICES", href: "#hero", id: "hero" },
     { name: "WORK", href: "#features", id: "features" },
-    // { name: "Contact", href: "#contact", id: "contact" },
+    { name: "WORKFLOW", href: "#workflow", id: "workflow" },
   ];
 
   return (

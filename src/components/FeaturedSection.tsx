@@ -47,14 +47,14 @@ const FeaturedSection = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button className="glow-on-hover">
+          <a href="#contact" className="glow-on-hover">
             <i className="ph-light ph-rocket-launch mr-2"></i>
             Get In Touch
-          </button>
-          <button className="transparent-button">
+          </a>
+          <a href="#hero" className="transparent-button">
             {/* <i className="ph-light ph-rocket-launch mr-2"></i> */}
             Our Services
-          </button>
+          </a>
         </div>
       </div>
     </section>

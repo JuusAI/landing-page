@@ -52,7 +52,7 @@ const Index = () => {
         }
       });
 
-      const sections = ["featured", "hero", "features", "contact"];
+      const sections = ["featured", "hero", "features", "workflow", "contact"];
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -87,8 +87,8 @@ const Index = () => {
         <FeaturedSection />
         <HeroSection />
         {/* <TestimonialsSection /> */}
-        {/* <HowItWorksSection /> */}
         <FeaturesSection />
+        <HowItWorksSection />
         {/* <MissionSection /> */}
         <ContactSection />
       </main>

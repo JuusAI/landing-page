@@ -1,4 +1,45 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 const HowItWorksSection = () => {
+  const cardRefs = useRef([]);
+  const sectionRef = useRef(null);
+
+  // useGSAP(() => {
+  //   cardRefs.current.forEach((card, index) => {
+  //     // const tl = gsap.timeline({
+  //     //   // paused: true,
+  //     //   scrollTrigger: {
+  //     //     trigger: sectionRef.current,
+  //     //     start: "top top",
+  //     //     end: "+=100%",
+  //     //     scrub: 1,
+  //     //     pin: true,
+  //     //     markers: false, // Enable for debugging
+  //     //   },
+  //     // });
+
+  //     gsap.to(card, {
+  //       scale: 4,
+  //       duration: 5,
+  //     });
+
+  //     gsap.to(card, {
+  //       scale: 1,
+  //       delay: 5,
+  //       duration: 5,
+  //     });
+  //     // tl.to(card.querySelector(".glass-card"), {
+  //     //   scale: 1.1,
+  //     //   y: 0,
+  //     //   boxShadow: "0 10px 50px rgba(0, 0, 0, 0.3)",
+  //     //   duration: 1,
+  //     //   ease: "power2.out",
+  //     // });
+  //   });
+  // });
+
   const steps = [
     {
       icon: "ph-light ph-gear-six",
@@ -28,18 +69,19 @@ const HowItWorksSection = () => {
 
   return (
     <section
-      id="how-it-works"
-      className="panel min-h-screen py-48 px-4 relative futuristic-bg-alt"
+      id="workflow"
+      ref={sectionRef}
+      className="panel min-h-screen pt-32 px-4 relative futuristic-bg"
     >
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="text-center mb-20">
           <div className="mb-6">
-            <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-600 rounded-full text-sm font-light tracking-tight border border-purple-500/30">
+            <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-light tracking-tight border border-yellow-500/30">
               What We Do
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
-            How <span className="text-gradient">It Works</span>
+            Our <span className="text-gradient">Workflow</span>
           </h2>
           <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
             Three simple steps to revolutionize your business with AI automation
@@ -50,8 +92,9 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <div
               key={step.title}
-              className="glass-card p-8 hover:bg-white/15 transition-all duration-500 group scroll-fade"
-              style={{ animationDelay: `${index * 200}ms` }}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className="glass-card relative p-8 hover:bg-white/15 transition-all duration-500 group scroll-fade"
+              // style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Image */}
               <div className="relative overflow-hidden rounded-xl mb-6">

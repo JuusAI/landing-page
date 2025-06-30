@@ -27,32 +27,35 @@ const FeaturesSection = () => {
     },
   ];
 
-  useGSAP(() => {
-    if (cardsRef.current.length) {
-      gsap.fromTo(
-        cardsRef.current,
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          stagger: 0.3,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    }
-  });
+  useGSAP(
+    () => {
+      if (cardsRef.current.length) {
+        gsap.fromTo(
+          cardsRef.current,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.3,
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 80%",
+              toggleActions: "play reverse play reverse",
+            },
+          }
+        );
+      }
+    },
+    { scope: sectionRef }
+  );
 
   return (
     <section
       id="features"
       ref={sectionRef}
-      className="panel min-h-screen py-48 px-4 relative futuristic-bg-alt"
+      className="panel min-h-screen pt-48 px-4 relative futuristic-bg-alt"
     >
       <div className="max-w-7xl mx-auto scroll-fade">
         <div className="mb-6 text-center md:text-left">
@@ -63,7 +66,7 @@ const FeaturesSection = () => {
         <div className="md:flex text-center md:text-left mb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             DISCOVER OUR <br />
-            <span className="text-gradient">SERVICES</span>
+            <span className="text-gradient">WORK</span>
           </h2>
           <p className="text-xl md:text-2xl font-light text-gray-600 max-w-2xl mx-auto md:mx-0 md:ml-24">
             We deliver complete AI automation <br /> services under one roof.
