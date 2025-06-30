@@ -9,9 +9,9 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: "ph-light ph-lightning",
-      title: "Lightning Fast",
+      title: "AI System Integration",
       description:
-        "Process thousands of tasks in seconds with our optimized AI algorithms and cloud infrastructure.",
+        "Let us seamlessly integrating AI into your existing enterprise systems to enhance productivity.",
     },
     {
       icon: "ph-light ph-shield-check",
@@ -21,9 +21,9 @@ const FeaturesSection = () => {
     },
     {
       icon: "ph-light ph-brain",
-      title: "Smart Learning",
+      title: "AI Workflow Automation",
       description:
-        "AI that learns from your patterns and continuously improves its performance and accuracy over time.",
+        "Streamlining business processes through intelligent automation and AI that learns from your patterns and continuously improves its performance",
     },
   ];
 
@@ -69,7 +69,9 @@ const FeaturesSection = () => {
             <span className="text-gradient">WORK</span>
           </h2>
           <p className="text-xl md:text-2xl font-light text-gray-600 max-w-2xl mx-auto md:mx-0 md:ml-24">
-            We deliver complete AI automation <br /> services under one roof.
+            We have delivered for clients across diverse industries and
+            geographies, including those in the European Union, USA, Canada,
+            Dubai, Monaco, UK, Germany, and Switzerland.
           </p>
         </div>
 

@@ -62,8 +62,9 @@ const HeroSection = () => {
         ref={textRef}
         className="hidden md:block md:absolute text-xl md:left-16 md:top-[20%] font-light text-gray-600"
       >
-        Helping forward looking companies thrive <br /> with custom AI solutions
-        and <br /> automated workflows.
+        We empower enterprises across the globe to <br />
+        harness the power of AI, delivering tangible results, <br />
+        from reduced costs to increased efficiency.
       </div>
       <div
         ref={titleRef}
@@ -80,8 +81,8 @@ const HeroSection = () => {
         </h1>
 
         <p className="text-xl md:text-2xl font-light text-gray-600 mb-12 max-w-3xl">
-          We deliver complete AI automation <br />
-          services under one roof.
+          Let us help you optimize <br /> your operations, boost productivity,
+          <br /> and surpass competitors with <br /> intelligent AI tools
         </p>
       </div>
 

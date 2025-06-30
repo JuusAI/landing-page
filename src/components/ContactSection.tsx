@@ -1,9 +1,6 @@
 const ContactSection = () => {
   return (
-    <section
-      id="contact"
-      className="panel py-32 px-4 relative futuristic-bg"
-    >
+    <section id="contact" className="panel py-32 px-4 relative futuristic-bg">
       <div className="max-w-4xl mx-auto text-center scroll-fade">
         <div className="mb-12">
           <span className="inline-block px-4 py-2 bg-green-500/20 text-green-600 rounded-full text-sm font-light tracking-tight border border-green-500/30">
@@ -64,17 +61,21 @@ const ContactSection = () => {
 
         {/* Contact Info */}
         <div className="grid md:grid-cols-3 gap-8 text-center">
-          <div className="glass-card p-6">
-            <i className="ph-light ph-envelope text-2xl text-blue-600 mb-3 block"></i>
-            <div className="text-gray-700 font-light">hello@juus.ai</div>
-          </div>
-          <div className="glass-card p-6">
-            <i className="ph-light ph-phone text-2xl text-purple-600 mb-3 block"></i>
-            <div className="text-gray-700 font-light">+1 (555) 123-4567</div>
-          </div>
+          <a href="mailto:hello@juus.ai">
+            <div className="glass-card p-6">
+              <i className="ph-light ph-envelope text-2xl text-blue-600 mb-3 block"></i>
+              <div className="text-gray-700 font-light">hello@juus.ai</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/juus.ai" target="_">
+            <div className="glass-card p-6">
+              <i className="ph-light ph-instagram-logo text-2xl text-purple-600 mb-3 block"></i>
+              <div className="text-gray-700 font-light">@juus.ai</div>
+            </div>
+          </a>
           <div className="glass-card p-6">
             <i className="ph-light ph-map-pin text-2xl text-green-600 mb-3 block"></i>
-            <div className="text-gray-700 font-light">San Francisco, CA</div>
+            <div className="text-gray-700 font-light">Dubai UAE</div>
           </div>
         </div>
       </div>
