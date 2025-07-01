@@ -5,6 +5,7 @@ import { useRef } from "react";
 const FeaturesSection = () => {
   const cardsRef = useRef([]);
   const sectionRef = useRef(null);
+  const titleRef = useRef(null);
 
   const features = [
     {
@@ -29,6 +30,22 @@ const FeaturesSection = () => {
 
   useGSAP(
     () => {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+
       if (cardsRef.current.length) {
         gsap.fromTo(
           cardsRef.current,
@@ -63,7 +80,7 @@ const FeaturesSection = () => {
             What We Offer
           </span>
         </div>
-        <div className="md:flex text-center md:text-left mb-20">
+        <div ref={titleRef} className="md:flex text-center md:text-left mb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             DISCOVER OUR <br />
             <span className="text-gradient">WORK</span>

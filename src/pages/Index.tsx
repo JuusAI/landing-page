@@ -88,7 +88,7 @@ const Index = () => {
         <FeaturedSection />
         <Spline
           // ref={splineRef}
-          className="fixed inset-0 z-[1] pointer-events-none"
+          className="fixed inset-0 z-[1]"
           scene="https://prod.spline.design/ozCkMCdN32fKu7UE/scene.splinecode"
         />
         <HeroSection />

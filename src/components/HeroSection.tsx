@@ -9,59 +9,79 @@ const HeroSection = () => {
   const textRef = useRef(null);
   const splineRef = useRef(null);
 
-  useGSAP(() => {
-    const title = titleRef.current;
-    const section = sectionRef.current;
-    const text = textRef.current;
-    // const spline = splineRef.current;
+  useGSAP(
+    () => {
+      const title = titleRef.current;
+      const section = sectionRef.current;
+      const text = textRef.current;
+      // const spline = splineRef.current;
 
-    // gsap.fromTo(
-    //   spline,
-    //   { y: -550},
-    //   {
-    //     y: 0,
-    //     duration: 1,
-    //     ease: "power3.out",
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       start: "top 30%",
-    //       toggleActions: "play reverse play reverse",
-    //     },
-    //   }
-    // );
+      // gsap.fromTo(
+      //   spline,
+      //   { y: -550},
+      //   {
+      //     y: 0,
+      //     duration: 1,
+      //     ease: "power3.out",
+      //     scrollTrigger: {
+      //       trigger: section,
+      //       start: "top 30%",
+      //       toggleActions: "play reverse play reverse",
+      //     },
+      //   }
+      // );
 
-    gsap.fromTo(
-      title,
-      { y: 80, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        visibility: "visible",
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 20%",
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
+      gsap.fromTo(
+        title,
+        { y: 80 },
+        {
+          y: 0,
+          opacity: 1,
+          visibility: "visible",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 20%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
 
-    gsap.fromTo(
-      text,
-      { opacity: 1 },
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 30%",
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
-  });
+      gsap.fromTo(
+        text,
+        { opacity: 1 },
+        {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 30%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        "p",
+        { y: 80, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          visibility: "visible",
+          duration: 2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 20%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    },
+    { scope: sectionRef }
+  );
 
   return (
     <section
