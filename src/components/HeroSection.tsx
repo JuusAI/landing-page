@@ -7,11 +7,28 @@ const HeroSection = () => {
   const titleRef = useRef(null);
   const sectionRef = useRef(null);
   const textRef = useRef(null);
+  const splineRef = useRef(null);
 
   useGSAP(() => {
     const title = titleRef.current;
     const section = sectionRef.current;
     const text = textRef.current;
+    // const spline = splineRef.current;
+
+    // gsap.fromTo(
+    //   spline,
+    //   { y: -550},
+    //   {
+    //     y: 0,
+    //     duration: 1,
+    //     ease: "power3.out",
+    //     scrollTrigger: {
+    //       trigger: section,
+    //       start: "top 30%",
+    //       toggleActions: "play reverse play reverse",
+    //     },
+    //   }
+    // );
 
     gsap.fromTo(
       title,
@@ -50,13 +67,8 @@ const HeroSection = () => {
     <section
       id="hero"
       ref={sectionRef}
-      className="panel min-h-screen flex flex-col items-center justify-center md:items-start relative overflow-hidden px-4 futuristic-bg"
+      className="panel min-h-screen flex flex-col items-center justify-center md:items-start relative overflow-hidden px-4 futuristic-bg z-0"
     >
-      <Spline
-        className="absolute inset-0 -z-10"
-        scene="https://prod.spline.design/ozCkMCdN32fKu7UE/scene.splinecode"
-      />
-
       {/* Content */}
       <div
         ref={textRef}

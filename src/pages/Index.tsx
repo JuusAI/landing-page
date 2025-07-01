@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Spline from "@splinetool/react-spline";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,6 +86,11 @@ const Index = () => {
 
       <main className="relative bg-slate-500">
         <FeaturedSection />
+        <Spline
+          // ref={splineRef}
+          className="fixed inset-0 z-[1] pointer-events-none"
+          scene="https://prod.spline.design/ozCkMCdN32fKu7UE/scene.splinecode"
+        />
         <HeroSection />
         {/* <TestimonialsSection /> */}
         <FeaturesSection />

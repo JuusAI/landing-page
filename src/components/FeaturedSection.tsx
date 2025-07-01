@@ -30,7 +30,7 @@ const FeaturedSection = () => {
     <section
       id="featured"
       ref={sectionRef}
-      className="md:block hidden panel min-h-[50vh] py-20 px-4 relative futuristic-bg-alt"
+      className="relative md:block hidden h-[50vh] py-20 px-4 futuristic-bg-alt z-10"
     >
       <div ref={titleRef} className="max-w-7xl mx-auto scroll-fade">
         <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center text-center md:text-left my-16">
