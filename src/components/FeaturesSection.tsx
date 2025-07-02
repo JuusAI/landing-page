@@ -10,21 +10,21 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: "ph-light ph-lightning",
-      title: "AI System Integration",
+      title: "Strategic AI Consulting",
       description:
-        "Let us seamlessly integrating AI into your existing enterprise systems to enhance productivity.",
+        "Identifying opportunities and developing a roadmap for AI integration.",
+    },
+    {
+      icon: "ph-light ph-brain",
+      title: "AI Automation Workflow",
+      description:
+        "Streamlining business processes through intelligent automation and AI that learns from your patterns and continuously improves its performance",
     },
     {
       icon: "ph-light ph-shield-check",
       title: "Enterprise Security",
       description:
         "Bank-grade encryption and security protocols to keep your data safe and compliant with regulations.",
-    },
-    {
-      icon: "ph-light ph-brain",
-      title: "AI Workflow Automation",
-      description:
-        "Streamlining business processes through intelligent automation and AI that learns from your patterns and continuously improves its performance",
     },
   ];
 
