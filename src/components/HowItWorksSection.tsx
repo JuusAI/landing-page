@@ -1,44 +1,11 @@
 import { useGSAP } from "@gsap/react";
+import Spline from "@splinetool/react-spline";
 import gsap from "gsap";
 import { useRef } from "react";
 
 const HowItWorksSection = () => {
   const cardRefs = useRef([]);
   const sectionRef = useRef(null);
-
-  // useGSAP(() => {
-  //   cardRefs.current.forEach((card, index) => {
-  //     // const tl = gsap.timeline({
-  //     //   // paused: true,
-  //     //   scrollTrigger: {
-  //     //     trigger: sectionRef.current,
-  //     //     start: "top top",
-  //     //     end: "+=100%",
-  //     //     scrub: 1,
-  //     //     pin: true,
-  //     //     markers: false, // Enable for debugging
-  //     //   },
-  //     // });
-
-  //     gsap.to(card, {
-  //       scale: 4,
-  //       duration: 5,
-  //     });
-
-  //     gsap.to(card, {
-  //       scale: 1,
-  //       delay: 5,
-  //       duration: 5,
-  //     });
-  //     // tl.to(card.querySelector(".glass-card"), {
-  //     //   scale: 1.1,
-  //     //   y: 0,
-  //     //   boxShadow: "0 10px 50px rgba(0, 0, 0, 0.3)",
-  //     //   duration: 1,
-  //     //   ease: "power2.out",
-  //     // });
-  //   });
-  // });
 
   const steps = [
     {
@@ -58,7 +25,7 @@ const HowItWorksSection = () => {
         "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center",
     },
     {
-      icon: "ph-light ph-trending-up",
+      icon: "ph-light ph-align-bottom",
       title: "Automate Trading",
       description:
         "Deploy sophisticated trading algorithms that make data-driven decisions and optimize your investment portfolio.",
@@ -71,10 +38,24 @@ const HowItWorksSection = () => {
     <section
       id="workflow"
       ref={sectionRef}
-      className="panel min-h-screen pt-32 px-4 relative futuristic-bg"
+      className="panel workflow min-h-screen pt-32 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
     >
+      {/* <div className="progress-container relative flex flex-col align-middle text-center">
+        <div className="progress-point text-black my-auto" data-step="1">
+          1
+        </div>
+        <i className="ph-light ph-arrow-down text-2xl"></i>
+        <div className="progress-point" data-step="2">
+          2
+        </div>
+        <i className="ph-light ph-arrow-down text-2xl"></i>
+        <div className="progress-point" data-step="3">
+          3
+        </div>
+      </div> */}
+
       <div className="max-w-7xl mx-auto scroll-fade">
-        <div className="text-center mb-20">
+        <div className="text-center">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-light tracking-tight border border-yellow-500/30">
               What We Do
@@ -88,52 +69,59 @@ const HowItWorksSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <div
-              key={step.title}
-              ref={(el) => (cardRefs.current[index] = el)}
-              className="glass-card relative p-8 hover:bg-white/15 transition-all duration-500 group scroll-fade"
-              // style={{ animationDelay: `${index * 200}ms` }}
-            >
-              {/* Image */}
-              <div className="relative overflow-hidden rounded-xl mb-6">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              </div>
-
-              {/* Icon */}
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <i className={`${step.icon} text-2xl text-white`}></i>
-              </div>
-
-              {/* Content */}
-              <div className="mb-4">
-                <span className="text-sm font-light text-blue-600 tracking-wider uppercase">
-                  Step {index + 1}
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">
-                {step.title}
-              </h3>
-
-              <p className="text-gray-600 font-light leading-relaxed">
-                {step.description}
-              </p>
-
-              {/* Arrow for flow */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-gray-300">
-                  <i className="ph-light ph-arrow-right text-2xl"></i>
+        <div className="sticky-container">
+          <div className="sticky-offset"></div>
+          <div className="cards-layout">
+            {steps.map((step, index) => (
+              <div
+                key={step.title}
+                ref={(el) => (cardRefs.current[index] = el)}
+                className="card glass-card relative group grid grid-cols-2"
+                // style={{ animationDelay: `${index * 200}ms` }}
+              >
+                {/* Image */}
+                <div className="relative overflow-hidden rounded-xl m-10">
+                  {/* <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  /> */}
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div> */}
+                  {/* <Spline scene="https://prod.spline.design/a04VHbUmsEqMIi6D/scene.splinecode" /> */}
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* Content */}
+                <div className="flex flex-col m-5 justify-center">
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-5">
+                    <i className={`${step.icon} text-2xl text-white`}></i>
+                  </div>
+
+                  <span className="text-lg font-light text-blue-600 tracking-wider uppercase mb-5">
+                    Step {index + 1}
+                  </span>
+
+                  <h3 className="text-3xl font-medium text-gray-900 mb-4 tracking-tight">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-xl text-gray-600 font-light leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+
+                {/* Arrow for flow */}
+                {/* {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-gray-300">
+                    <i className="ph-light ph-arrow-right text-2xl"></i>
+                  </div>
+                )} */}
+              </div>
+            ))}
+            {/* <div className="card">4</div>
+            <div className="card">5</div>
+            <div className="card">6</div> */}
+          </div>
         </div>
       </div>
     </section>
