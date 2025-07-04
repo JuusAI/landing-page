@@ -46,7 +46,6 @@ const Index = () => {
           scrollTrigger: {
             trigger: ".workflow",
             pin: true,
-            markers: true,
             scrub: 1,
           },
         });

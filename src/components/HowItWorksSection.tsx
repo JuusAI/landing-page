@@ -9,28 +9,43 @@ const HowItWorksSection = () => {
 
   const steps = [
     {
-      icon: "ph-light ph-gear-six",
-      title: "Automation",
+      icon: [
+        "ph-light ph-open-ai-logo",
+        "ph-light ph-microsoft-excel-logo",
+        "ph-light ph-globe",
+        "ph-light ph-download",
+        "ph-light ph-cloud",
+      ],
+      title: "Real Estate Intelligence Tracker with Bright Data & OpenAI",
       description:
-        "Set up intelligent automation workflows that handle repetitive tasks, freeing up your time for strategic decisions.",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop&crop=center",
+        "The Real Estate Intelligence Tracker is a powerful automated workflow designed for real estate analysts, investors, proptech startups, and market researchers who need to collect and analyze structured data from real estate listings across the web at scale.",
+      image: "../../public/workflow1.png",
     },
     {
-      icon: "ph-light ph-robot",
-      title: "AI Assistant Setup",
+      icon: [
+        "ph-light ph-robot",
+        "ph-light ph-facebook-logo",
+        "ph-light ph-twitter-logo",
+        "ph-light ph-linkedin-logo",
+        "ph-light ph-timer",
+      ],
+      title: "Social Media Automation",
       description:
-        "Configure your personal AI assistant with custom knowledge and capabilities tailored to your business needs.",
-      image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop&crop=center",
+        "This workflow simplifies social media management by automating content scheduling, engagement tracking, analytics reporting, and cross-platform posting. This not only saves time but also ensures a more effective social media strategy",
+      image: "../../public/workflow2.png",
     },
     {
-      icon: "ph-light ph-align-bottom",
-      title: "Automate Trading",
+      icon: [
+        "ph-light ph-align-bottom",
+        "ph-light ph-shuffle",
+        "ph-light ph-cloud-check",
+        "ph-light ph-check-fat",
+        "ph-light ph-gauge",
+      ],
+      title: "Customer Data Synchronization",
       description:
-        "Deploy sophisticated trading algorithms that make data-driven decisions and optimize your investment portfolio.",
-      image:
-        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop&crop=center",
+        "This workflow manages customer data across multiple platforms, such as a CRM, a customer support system, and a central database, keeping everything updated manually is time-consuming and error-prone.",
+      image: "../../public/workflow3.png",
     },
   ];
 
@@ -65,7 +80,7 @@ const HowItWorksSection = () => {
             Our <span className="text-gradient">Workflow</span>
           </h2>
           <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
-            Three simple steps to revolutionize your business with AI automation
+            Our workflows to revolutionize your business with AI automation
           </p>
         </div>
 
@@ -81,11 +96,11 @@ const HowItWorksSection = () => {
               >
                 {/* Image */}
                 <div className="relative overflow-hidden rounded-xl m-10">
-                  {/* <img
+                  <img
                     src={step.image}
                     alt={step.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  /> */}
+                    className="w-full h-full object-cover"
+                  />
                   {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div> */}
                   {/* <Spline scene="https://prod.spline.design/a04VHbUmsEqMIi6D/scene.splinecode" /> */}
                 </div>
@@ -93,21 +108,28 @@ const HowItWorksSection = () => {
                 {/* Content */}
                 <div className="flex flex-col m-5 justify-center">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 mb-5">
-                    <i className={`${step.icon} text-2xl text-white`}></i>
-                  </div>
-
                   <span className="text-lg font-light text-blue-600 tracking-wider uppercase mb-5">
-                    Step {index + 1}
+                    Workflow {index + 1}
                   </span>
 
                   <h3 className="text-3xl font-medium text-gray-900 mb-4 tracking-tight">
                     {step.title}
                   </h3>
 
-                  <p className="text-xl text-gray-600 font-light leading-relaxed">
+                  <p className="text-xl text-gray-600 font-light leading-relaxed mb-5">
                     {step.description}
                   </p>
+
+                  <div className="flex gap-3">
+                    {step.icon.map((icon) => (
+                      <div
+                        key={icon}
+                        className="w-16 h-16 rounded-2xl flex items-center justify-center border"
+                      >
+                        <i className={`${icon} text-2xl text-black`}></i>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Arrow for flow */}

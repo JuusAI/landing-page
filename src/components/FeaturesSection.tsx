@@ -1,4 +1,5 @@
 import { useGSAP } from "@gsap/react";
+import Spline from "@splinetool/react-spline";
 import gsap from "gsap";
 import { useRef } from "react";
 
@@ -9,19 +10,25 @@ const FeaturesSection = () => {
 
   const features = [
     {
-      icon: "ph-light ph-lightning",
+      icon: (
+        <Spline scene="https://prod.spline.design/KmWnJpuLOlMDn0OG/scene.splinecode" />
+      ),
       title: "Strategic AI Consulting",
       description:
         "Identifying opportunities and developing a roadmap for AI integration.",
     },
     {
-      icon: "ph-light ph-brain",
+      icon: (
+        <Spline scene="https://prod.spline.design/vAePoNUBlxefD4jj/scene.splinecode" />
+      ),
       title: "AI Automation Workflow",
       description:
         "Streamlining business processes through intelligent automation and AI that learns from your patterns and continuously improves its performance",
     },
     {
-      icon: "ph-light ph-shield-check",
+      icon: (
+        <Spline scene="https://prod.spline.design/4DR2enCdkDMg6X9E/scene.splinecode" />
+      ),
       title: "Enterprise Security",
       description:
         "Bank-grade encryption and security protocols to keep your data safe and compliant with regulations.",
@@ -100,9 +107,10 @@ const FeaturesSection = () => {
               className="glass-card p-8 text-center hover:bg-white/15 group"
             >
               {/* Icon */}
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <i className={`${feature.icon} text-3xl text-white`}></i>
-              </div>
+              {/* <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"> */}
+              {/* <i className={`${feature.icon} text-3xl text-white`}></i> */}
+              {/* </div> */}
+              <div className="mb-5 rounded-lg h-[20vh]">{feature.icon}</div>
 
               {/* Content */}
               <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">
@@ -117,12 +125,12 @@ const FeaturesSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <button className="neuro-button">
             <i className="ph-light ph-star mr-2"></i>
             Explore All Features
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
