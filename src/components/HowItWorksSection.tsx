@@ -19,7 +19,7 @@ const HowItWorksSection = () => {
       title: "Real Estate Intelligence Tracker with Bright Data & OpenAI",
       description:
         "The Real Estate Intelligence Tracker is a powerful automated workflow designed for real estate analysts, investors, proptech startups, and market researchers who need to collect and analyze structured data from real estate listings across the web at scale.",
-      image: "../../public/workflow1.png",
+      image: "/workflow1.png",
     },
     {
       icon: [
@@ -32,7 +32,7 @@ const HowItWorksSection = () => {
       title: "Social Media Automation",
       description:
         "This workflow simplifies social media management by automating content scheduling, engagement tracking, analytics reporting, and cross-platform posting. This not only saves time but also ensures a more effective social media strategy",
-      image: "../../public/workflow2.png",
+      image: "/workflow2.png",
     },
     {
       icon: [
@@ -45,7 +45,7 @@ const HowItWorksSection = () => {
       title: "Customer Data Synchronization",
       description:
         "This workflow manages customer data across multiple platforms, such as a CRM, a customer support system, and a central database, keeping everything updated manually is time-consuming and error-prone.",
-      image: "../../public/workflow3.png",
+      image: "/workflow3.png",
     },
   ];
 

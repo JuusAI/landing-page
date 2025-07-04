@@ -19,7 +19,8 @@ const FeaturesSection = () => {
     },
     {
       icon: (
-        <Spline scene="https://prod.spline.design/vAePoNUBlxefD4jj/scene.splinecode" />
+        // <Spline scene="https://prod.spline.design/vAePoNUBlxefD4jj/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/hMJHeXoCBSAxBXtt/scene.splinecode" />
       ),
       title: "AI Automation Workflow",
       description:
@@ -27,7 +28,7 @@ const FeaturesSection = () => {
     },
     {
       icon: (
-        <Spline scene="https://prod.spline.design/4DR2enCdkDMg6X9E/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/k-ngoofwiT2evxjl/scene.splinecode" />
       ),
       title: "Enterprise Security",
       description:
