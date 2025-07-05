@@ -10,7 +10,7 @@ const MissionSection = () => {
         <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
-      <div className="max-w-4xl mx-auto text-center scroll-fade">
+      <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
           <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-600 rounded-full text-sm font-light tracking-tight border border-purple-500/30">
             Our Mission

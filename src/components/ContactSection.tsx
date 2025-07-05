@@ -94,7 +94,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="panel pt-24 md:py-32 px-4 relative futuristic-bg">
-      <div className="max-w-4xl mx-auto text-center scroll-fade">
+      <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
           <span className="inline-block px-4 py-2 bg-green-500/20 text-green-600 rounded-full text-sm font-light tracking-tight border border-green-500/30">
             Get In Touch

@@ -296,10 +296,7 @@
 
 /* Smooth scroll animations */
 .scroll-fade {
-  opacity: 0;
-  filter: blur(10px);
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
+  opacity: 1;
 }
 
 .scroll-fade.visible {

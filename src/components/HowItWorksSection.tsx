@@ -69,7 +69,7 @@ const HowItWorksSection = () => {
         </div>
       </div> */}
 
-      <div className="max-w-7xl mx-auto scroll-fade h-full">
+      <div className="max-w-7xl mx-auto h-full">
         <div className="text-center">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-light tracking-tight border border-yellow-500/30">

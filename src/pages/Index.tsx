@@ -17,8 +17,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Index = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
-  const containerRef = useRef();
-
   useGSAP(() => {
     const panels = gsap.utils.toArray<HTMLElement>(".panel");
 
@@ -91,43 +89,43 @@ const Index = () => {
   });
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Animate elements on scroll
-      const elements = document.querySelectorAll(".scroll-fade");
-      elements.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    // const handleScroll = () => {
+    // Animate elements on scroll
+    // const elements = document.querySelectorAll(".scroll-fade");
+    // elements.forEach((element) => {
+    //   const rect = element.getBoundingClientRect();
+    //   const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
-        if (isVisible) {
-          element.classList.add("visible");
-        }
-      });
+    //   if (isVisible) {
+    //     element.classList.add("visible");
+    //   }
+    // });
 
-      const sections = ["featured", "hero", "features", "workflow", "contact"];
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const id = entry.target.getAttribute("id");
-              setActiveSection(id!);
-            }
-          });
-        },
-        { threshold: 0.6 }
-      );
+    const sections = ["featured", "hero", "features", "workflow", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            setActiveSection(id!);
+            console.log(id);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
 
-      sections.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section) observer.observe(section);
-      });
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
 
-      return () => observer.disconnect();
-    };
+    return () => observer.disconnect();
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    // window.addEventListener("scroll", handleScroll);
+    // handleScroll(); // Initial check
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    // return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

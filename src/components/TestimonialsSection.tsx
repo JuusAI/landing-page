@@ -49,7 +49,7 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="py-32 px-4 relative futuristic-bg section-stack section-overlap">
-      <div className="max-w-7xl mx-auto scroll-fade">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             Trusted by <span className="text-gradient">Industry Leaders</span>
