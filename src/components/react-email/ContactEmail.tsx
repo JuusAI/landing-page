@@ -19,9 +19,7 @@ interface KoalaWelcomeEmailProps {
 //   ? `https://${process.env.VERCEL_URL}`
 //   : "";
 
-export const KoalaWelcomeEmail = ({
-  userFirstname,
-}: KoalaWelcomeEmailProps) => (
+const ContactEmail = ({ userFirstname }: KoalaWelcomeEmailProps) => (
   <Html>
     <Head />
     <Body style={main}>
@@ -60,11 +58,7 @@ export const KoalaWelcomeEmail = ({
   </Html>
 );
 
-KoalaWelcomeEmail.PreviewProps = {
-  userFirstname: "Alan",
-} as KoalaWelcomeEmailProps;
-
-export default KoalaWelcomeEmail;
+export default ContactEmail;
 
 const main = {
   backgroundColor: "#ffffff",
