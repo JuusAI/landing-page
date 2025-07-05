@@ -1,4 +1,6 @@
+import { render } from "@react-email/render";
 import { useState } from "react";
+import ConfirmationEmail from "./emails/ContactEmail";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -22,20 +24,14 @@ const ContactSection = () => {
     }
 
     try {
+      const emailHTML = render(ConfirmationEmail({ to }));
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: form.email, // Or dynamically set if needed
           subject: `New Contact from ${form.name}`,
-          html: `
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> ${form.name}</p>
-            <p><strong>Email:</strong> ${form.email}</p>
-            <p><strong>Company:</strong> ${form.company}</p>
-            <p><strong>Message:</strong></p>
-            <p>${form.message}</p>
-          `,
+          html: emailHTML,
         }),
       });
 
