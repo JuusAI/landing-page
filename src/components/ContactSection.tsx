@@ -24,11 +24,14 @@ const ContactSection = () => {
     }
 
     try {
-      const emailHTML = render(
+      const emailHTML = await render(
         ConfirmationEmail({
           name: form.name,
         })
       );
+
+      console.log(emailHTML);
+
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
