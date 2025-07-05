@@ -18,7 +18,7 @@ const HowItWorksSection = () => {
       ],
       title: "Real Estate Intelligence Tracker with Bright Data & OpenAI",
       description:
-        "The Real Estate Intelligence Tracker is a powerful automated workflow designed for real estate analysts, investors, proptech startups, and market researchers who need to collect and analyze structured data from real estate listings across the web at scale.",
+        "This workflow is a powerful automated workflow designed for real estate analysts, investors, proptech startups, and market researchers who need to collect and analyze structured data from real estate listings across the web at scale.",
       image: "/workflow1.png",
     },
     {
@@ -53,7 +53,7 @@ const HowItWorksSection = () => {
     <section
       id="workflow"
       ref={sectionRef}
-      className="panel workflow min-h-screen pt-32 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
+      className="panel workflow min-h-screen pt-32 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
     >
       {/* <div className="progress-container relative flex flex-col align-middle text-center">
         <div className="progress-point text-black my-auto" data-step="1">
@@ -69,7 +69,7 @@ const HowItWorksSection = () => {
         </div>
       </div> */}
 
-      <div className="max-w-7xl mx-auto scroll-fade">
+      <div className="max-w-7xl mx-auto scroll-fade h-full">
         <div className="text-center">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-light tracking-tight border border-yellow-500/30">

@@ -80,9 +80,9 @@ const FeaturesSection = () => {
     <section
       id="features"
       ref={sectionRef}
-      className="panel min-h-screen pt-48 px-4 relative futuristic-bg-alt"
+      className="panel min-h-screen px-4 pt-48 relative futuristic-bg-alt"
     >
-      <div className="max-w-7xl mx-auto scroll-fade">
+      <div className="max-w-7xl mx-auto scroll-fade h-full pb-10">
         <div className="mb-6 text-center md:text-left">
           <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-600 rounded-full text-sm font-light tracking-tight border border-purple-500/30">
             What We Offer
@@ -105,7 +105,7 @@ const FeaturesSection = () => {
             <div
               key={feature.title}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="glass-card p-8 text-center hover:bg-white/15 group"
+              className="glass-card p-8 h-[50vh] text-center hover:bg-white/15"
             >
               {/* Icon */}
               {/* <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"> */}

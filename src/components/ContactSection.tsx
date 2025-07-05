@@ -1,4 +1,58 @@
+import { useState } from "react";
+
 const ContactSection = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState(null); // success | error | null
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const sendEmail = async () => {
+    if (!form.name || !form.email || !form.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: form.email, // Or dynamically set if needed
+          subject: `New Contact from ${form.name}`,
+          html: `
+            <h2>New Contact Form Submission</h2>
+            <p><strong>Name:</strong> ${form.name}</p>
+            <p><strong>Email:</strong> ${form.email}</p>
+            <p><strong>Company:</strong> ${form.company}</p>
+            <p><strong>Message:</strong></p>
+            <p>${form.message}</p>
+          `,
+        }),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", company: "", message: "" });
+      } else {
+        setStatus("error");
+        console.error(data.error);
+      }
+    } catch (err) {
+      setStatus("error");
+      console.error("Email failed to send:", err);
+    }
+  };
+
   return (
     <section id="contact" className="panel py-32 px-4 relative futuristic-bg">
       <div className="max-w-4xl mx-auto text-center scroll-fade">
@@ -24,6 +78,9 @@ const ContactSection = () => {
             <div>
               <input
                 type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full px-6 py-4 bg-white/10 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 font-light focus:outline-none focus:border-blue-500/50 transition-colors duration-200"
               />
@@ -31,6 +88,9 @@ const ContactSection = () => {
             <div>
               <input
                 type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 className="w-full px-6 py-4 bg-white/10 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 font-light focus:outline-none focus:border-blue-500/50 transition-colors duration-200"
               />
@@ -40,6 +100,9 @@ const ContactSection = () => {
           <div className="mb-8">
             <input
               type="text"
+              name="company"
+              value={form.company}
+              onChange={handleChange}
               placeholder="Company Name"
               className="w-full px-6 py-4 bg-white/10 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 font-light focus:outline-none focus:border-blue-500/50 transition-colors duration-200"
             />
@@ -47,16 +110,28 @@ const ContactSection = () => {
 
           <div className="mb-8">
             <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
               placeholder="Tell us about your automation needs..."
               rows={4}
               className="w-full px-6 py-4 bg-white/10 border border-gray-200 rounded-xl text-gray-900 placeholder-gray-500 font-light focus:outline-none focus:border-blue-500/50 transition-colors duration-200 resize-none"
             />
           </div>
 
-          <button className="neuro-button w-full md:w-auto">
+          <button className="neuro-button w-full md:w-auto" onClick={sendEmail}>
             <i className="ph-light ph-paper-plane-tilt mr-2"></i>
             Start Your AI Journey
           </button>
+
+          {status === "success" && (
+            <p className="mt-4 text-green-600">Your message has been sent!</p>
+          )}
+          {status === "error" && (
+            <p className="mt-4 text-red-600">
+              Something went wrong. Try again.
+            </p>
+          )}
         </div>
 
         {/* Contact Info */}
