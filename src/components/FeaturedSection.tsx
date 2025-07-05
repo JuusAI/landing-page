@@ -61,7 +61,7 @@ const FeaturedSection = () => {
             <i className="ph-light ph-rocket-launch mr-2"></i>
             Get In Touch
           </a>
-          <a href="#hero" className="transparent-button">
+          <a href="#hero" className="transparent-button hidden sm:block">
             {/* <i className="ph-light ph-rocket-launch mr-2"></i> */}
             Our Services
           </a>
