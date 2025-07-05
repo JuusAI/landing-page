@@ -30,23 +30,33 @@ const FeaturedSection = () => {
     <section
       id="featured"
       ref={sectionRef}
-      className="relative md:block hidden h-[50vh] py-20 px-4 futuristic-bg-alt z-10"
+      className="relative md:h-[50vh] h-[60vh] md:py-20 py-1 px-4 futuristic-bg-alt z-10"
     >
       <div ref={titleRef} className="max-w-7xl mx-auto scroll-fade">
-        <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center text-center md:text-left my-16">
-          <h1 className="text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter mb-8 leading-tight text-gray-900">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center text-center md:text-left md:my-16 mt-16 mb-3">
+          <h1 className="md:block hidden text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter md:mb-8 leading-tight text-gray-900">
             Grow <span className="text-gradient">Smarter and Scale</span>
             <br />
             faster with <span className="text-gradient">AI</span>
           </h1>
-          <p className="text-xl md:text-2xl font-light text-gray-600 mb-12 mx-auto md:mx-0 md:ml-24 max-w-3xl leading-relaxed">
+          <h1 className="md:hidden text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter md:mb-8 leading-tight text-gray-900">
+            Grow <span className="text-gradient">Smarter and Scale</span>
+            <br />
+            faster with <span className="text-gradient">AI</span>
+          </h1>
+          <p className="md:block hidden md:text-2xl font-light text-gray-600 md:mb-12 mx-auto md:mx-0 md:ml-24 max-w-3xl leading-relaxed">
             We specialize in creating custom workflow automation <br />
             and personalized AI solutions for businesses and individuals <br />
             within 14 days
           </p>
+          <p className="md:hidden text-xl font-light text-gray-600 mx-auto max-w-3xl leading-relaxed mb-3">
+            We specialize in creating custom workflow automation and
+            personalized AI solutions for businesses and individuals within 14
+            days
+          </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-row gap-6 justify-center items-center">
           <a href="#contact" className="glow-on-hover">
             <i className="ph-light ph-rocket-launch mr-2"></i>
             Get In Touch

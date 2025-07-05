@@ -137,9 +137,12 @@ const Index = () => {
       <main className="relative bg-slate-500">
         <FeaturedSection />
         <Spline
-          // ref={splineRef}
-          className="fixed inset-0 z-[1]"
+          className="md:block hidden fixed inset-0 z-[1]"
           scene="https://prod.spline.design/ozCkMCdN32fKu7UE/scene.splinecode"
+        />
+        <Spline
+          className="md:hidden fixed inset-0 z-[1]"
+          scene="https://prod.spline.design/4xbiRSumaxpFUzf2/scene.splinecode"
         />
         <HeroSection />
         {/* <TestimonialsSection /> */}
