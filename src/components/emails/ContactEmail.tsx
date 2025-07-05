@@ -27,7 +27,7 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
           </Text>
           <Text style={styles.paragraph}>
             Your message has been received, and our AI experts are reviewing it.
-            One of our team members will be in touch within the next few days to
+            One of our team members will be in touch within the next 6 - 12 hours to
             discuss how we can help automate and accelerate your business.
           </Text>
           <Text style={styles.paragraph}>

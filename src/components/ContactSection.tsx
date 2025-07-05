@@ -30,8 +30,6 @@ const ContactSection = () => {
         })
       );
 
-      console.log(emailHTML);
-
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,6 +40,8 @@ const ContactSection = () => {
         }),
       });
 
+      await sendInfo();
+
       const data = await res.json();
       if (data.success) {
         setStatus("success");
@@ -50,6 +50,42 @@ const ContactSection = () => {
         setStatus("error");
         console.error(data.error);
       }
+    } catch (err) {
+      setStatus("error");
+      console.error("Email failed to send:", err);
+    }
+  };
+
+  const sendInfo = async () => {
+    try {
+      const res = await fetch("/api/send-info", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: form.email, // Or dynamically set if needed
+          subject: `New Contact from ${form.name}`,
+          html: `
+  <html>
+    <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background-color: #f3f4f6; padding: 40px;">
+      <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);">
+        <h2 style="color: #111827; margin-bottom: 24px;">🚀 New Contact Submission</h2>
+
+        <p style="font-size: 16px; margin-bottom: 8px;"><strong>Name:</strong> ${form.name}</p>
+        <p style="font-size: 16px; margin-bottom: 8px;"><strong>Email:</strong> ${form.email}</p>
+        <p style="font-size: 16px; margin-bottom: 8px;"><strong>Company:</strong> ${form.company || "Not provided"}</p>
+        <p style="font-size: 16px; margin-bottom: 8px;"><strong>Message:</strong></p>
+        <p style="font-size: 16px; background-color: #f9fafb; padding: 16px; border-radius: 8px; white-space: pre-wrap; border: 1px solid #e5e7eb;">
+          ${form.message || "No message submitted."}
+        </p>
+
+        <hr style="margin: 32px 0; border: none; border-top: 1px solid #e5e7eb;" />
+        <p style="font-size: 14px; color: #6b7280;">This message was sent via the Juus AI contact form.</p>
+      </div>
+    </body>
+  </html>
+`,
+        }),
+      });
     } catch (err) {
       setStatus("error");
       console.error("Email failed to send:", err);
