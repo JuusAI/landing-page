@@ -119,7 +119,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl;
+    @apply bg-white/10 border border-white/20 rounded-2xl;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
       0 8px 32px rgba(0, 0, 0, 0.1);

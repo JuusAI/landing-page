@@ -105,12 +105,8 @@ const FeaturesSection = () => {
             <div
               key={feature.title}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="glass-card p-8 h-[50vh] text-center hover:bg-white/15"
+              className="glass-card p-8 h-auto text-center"
             >
-              {/* Icon */}
-              {/* <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"> */}
-              {/* <i className={`${feature.icon} text-3xl text-white`}></i> */}
-              {/* </div> */}
               <div className="mb-5 rounded-lg h-[20vh]">{feature.icon}</div>
 
               {/* Content */}
