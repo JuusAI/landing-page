@@ -91,55 +91,48 @@ const HowItWorksSection = () => {
               <div
                 key={step.title}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className="card glass-card relative group grid grid-cols-2"
-                // style={{ animationDelay: `${index * 200}ms` }}
+                className="card glass-card relative group grid grid-cols-1 md:grid-cols-2 w-full md:w-4/5 mx-auto"
               >
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-xl m-10">
+                <div className="relative overflow-hidden rounded-xl m-4 md:m-10">
                   <img
                     src={step.image}
                     alt={step.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-64 md:h-full object-cover rounded-xl"
                   />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div> */}
-                  {/* <Spline scene="https://prod.spline.design/a04VHbUmsEqMIi6D/scene.splinecode" /> */}
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col m-5 justify-center">
+                <div className="flex flex-col m-4 md:m-5 justify-center">
                   {/* Icon */}
-                  <span className="text-lg font-light text-blue-600 tracking-wider uppercase mb-5">
+                  <span className="text-sm md:text-lg font-light text-blue-600 tracking-wider uppercase mb-3 md:mb-5">
                     Workflow {index + 1}
                   </span>
 
-                  <h3 className="text-3xl font-medium text-gray-900 mb-4 tracking-tight">
+                  <h3 className="text-xl md:text-3xl font-medium text-gray-900 mb-2 md:mb-4 tracking-tight">
                     {step.title}
                   </h3>
 
-                  <p className="text-xl text-gray-600 font-light leading-relaxed mb-5">
+                  <p className="text-base md:text-xl text-gray-600 font-light leading-relaxed mb-4 md:mb-5">
                     {step.description}
                   </p>
 
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     {step.icon.map((icon) => (
                       <div
                         key={icon}
-                        className="w-16 h-16 rounded-2xl flex items-center justify-center border"
+                        className="w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border"
                       >
-                        <i className={`${icon} text-2xl text-black`}></i>
+                        <i
+                          className={`${icon} text-xl md:text-2xl text-black`}
+                        ></i>
                       </div>
                     ))}
                   </div>
                 </div>
-
-                {/* Arrow for flow */}
-                {/* {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-gray-300">
-                    <i className="ph-light ph-arrow-right text-2xl"></i>
-                  </div>
-                )} */}
               </div>
             ))}
+
             {/* <div className="card">4</div>
             <div className="card">5</div>
             <div className="card">6</div> */}
