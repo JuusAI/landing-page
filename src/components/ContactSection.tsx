@@ -24,7 +24,11 @@ const ContactSection = () => {
     }
 
     try {
-      const emailHTML = render(ConfirmationEmail({ to }));
+      const emailHTML = render(
+        ConfirmationEmail({
+          name: form.name,
+        })
+      );
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
