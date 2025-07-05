@@ -53,7 +53,7 @@ const HowItWorksSection = () => {
     <section
       id="workflow"
       ref={sectionRef}
-      className="panel workflow min-h-screen pt-32 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
+      className="panel workflow min-h-screen pt-24 md:pt-32 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
     >
       {/* <div className="progress-container relative flex flex-col align-middle text-center">
         <div className="progress-point text-black my-auto" data-step="1">
@@ -76,7 +76,7 @@ const HowItWorksSection = () => {
               What We Do
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tighter md:mb-6 mb-3 text-gray-900">
             Our <span className="text-gradient">Workflow</span>
           </h2>
           <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ const HowItWorksSection = () => {
                 className="card glass-card relative group grid grid-cols-1 md:grid-cols-2 w-full md:w-4/5 mx-auto"
               >
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-xl m-4 md:m-10">
+                <div className="md:block hidden relative overflow-hidden rounded-xl m-4 md:m-10">
                   <img
                     src={step.image}
                     alt={step.title}
@@ -117,7 +117,7 @@ const HowItWorksSection = () => {
                     {step.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2">
                     {step.icon.map((icon) => (
                       <div
                         key={icon}

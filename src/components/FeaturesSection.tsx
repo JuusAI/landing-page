@@ -80,7 +80,7 @@ const FeaturesSection = () => {
     <section
       id="features"
       ref={sectionRef}
-      className="panel min-h-screen px-4 pt-48 relative futuristic-bg-alt"
+      className="panel min-h-screen px-4 pt-24 md:pt-32 relative futuristic-bg-alt"
     >
       <div className="max-w-7xl mx-auto scroll-fade h-full pb-10">
         <div className="mb-6 text-center md:text-left">
