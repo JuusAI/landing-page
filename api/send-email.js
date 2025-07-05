@@ -1,7 +1,7 @@
 // api/send-email.js
 import { render } from "@react-email/render";
 import { Resend } from "resend";
-import ContactEmail from "../src/components/react-email/ContactEmail"
+import ContactEmail from "../react-email/ContactEmail"
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
