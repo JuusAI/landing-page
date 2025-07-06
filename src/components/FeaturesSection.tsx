@@ -88,7 +88,7 @@ const FeaturesSection = () => {
             What We Offer
           </span>
         </div>
-        <div ref={titleRef} className="md:flex text-center md:text-left mb-20">
+        <div ref={titleRef} className="md:flex text-center md:text-left mb-10 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             DISCOVER OUR <br />
             <span className="text-gradient">WORK</span>
