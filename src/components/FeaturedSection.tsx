@@ -37,12 +37,13 @@ const FeaturedSection = () => {
           <h1 className="md:block hidden text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter md:mb-8 leading-tight text-gray-900">
             Grow <span className="text-gradient">Smarter and Scale</span>
             <br />
-            faster with <span className="text-gradient">AI</span>
+            Faster with <span className="text-gradient">AI</span>
           </h1>
           <h1 className="md:hidden text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter md:mb-8 leading-tight text-gray-900">
-            Grow <span className="text-gradient">Smarter and Scale</span>
+            Grow <span className="text-gradient">Smarter </span>
             <br />
-            faster with <span className="text-gradient">AI</span>
+            and Scale <span className="text-gradient">Faster</span> with
+            <span className="text-gradient"> AI</span>
           </h1>
           <p className="md:block hidden md:text-2xl font-light text-gray-600 md:mb-12 mx-auto md:mx-0 md:ml-24 max-w-3xl leading-relaxed">
             We specialize in creating custom workflow automation <br />

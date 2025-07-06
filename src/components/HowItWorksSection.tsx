@@ -1,11 +1,52 @@
 import { useGSAP } from "@gsap/react";
 import Spline from "@splinetool/react-spline";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HowItWorksSection = () => {
   const cardRefs = useRef([]);
   const sectionRef = useRef(null);
+  // 110% 80 50%
+  useGSAP(() => {
+    cardRefs.current.forEach((card, index) => {
+      const shape1s = card.querySelectorAll(".shape1");
+      const shape2s = card.querySelectorAll(".shape2");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: `top ${110 - 30 * index}%`,
+          toggleActions: "play reverse play reverse",
+          // markers: true,
+          // once: true,
+        },
+      });
+
+      shape1s.forEach((shape, i) => {
+        tl.to(
+          shape,
+          {
+            strokeDashoffset: 0,
+            duration: 5,
+            ease: "power2.out",
+          },
+          i * 0.5 // staggered delay
+        );
+      });
+
+      shape2s.forEach((shape, i) => {
+        tl.to(
+          shape,
+          {
+            strokeDashoffset: 0,
+            duration: 4,
+            ease: "power2.out",
+          },
+          i * 0.5 // same delay as shape1 to run in sync
+        );
+      });
+    });
+  }, []);
 
   const steps = [
     {
@@ -118,14 +159,48 @@ const HowItWorksSection = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-2">
-                    {step.icon.map((icon) => (
+                    {step.icon.map((icon, index) => (
                       <div
-                        key={icon}
-                        className="w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center border"
+                        key={index}
+                        className="relative w-12 h-12 md:w-16 md:h-16"
                       >
-                        <i
-                          className={`${icon} text-xl md:text-2xl text-black`}
-                        ></i>
+                        <svg
+                          className="absolute top-0 left-0 w-full h-full z-0"
+                          viewBox="0 0 100 100"
+                          preserveAspectRatio="none"
+                        >
+                          <rect
+                            x="1"
+                            y="1"
+                            width="98"
+                            height="98"
+                            rx="16"
+                            ry="16"
+                            fill="none"
+                            className="shape1"
+                            style={{
+                              animationDelay: `${index * 0.5}s`,
+                            }}
+                          />
+                          <rect
+                            x="1"
+                            y="1"
+                            width="98"
+                            height="98"
+                            rx="16"
+                            ry="16"
+                            fill="none"
+                            className="shape2"
+                            style={{
+                              animationDelay: `${index * 0.5}s`,
+                            }}
+                          />
+                        </svg>
+                        <div className="relative z-10 w-full h-full flex items-center justify-center">
+                          <i
+                            className={`${icon} text-xl md:text-2xl text-black`}
+                          ></i>
+                        </div>
                       </div>
                     ))}
                   </div>
