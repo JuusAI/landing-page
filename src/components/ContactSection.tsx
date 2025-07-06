@@ -93,7 +93,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="panel pt-24 md:py-32 px-4 relative futuristic-bg">
+    <section
+      id="contact"
+      className="panel pt-24 md:py-32 px-4 relative futuristic-bg"
+    >
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
           <span className="inline-block px-4 py-2 bg-green-500/20 text-green-600 rounded-full text-sm font-light tracking-tight border border-green-500/30">
@@ -195,7 +198,7 @@ const ContactSection = () => {
       </div>
 
       {/* Footer */}
-      <div className="mt-20 pt-8 border-t border-gray-300 text-center">
+      <div className="md:mt-20 py-8 border-t border-gray-300 text-center">
         <p className="text-gray-500 font-light">
           © 2025 Juus AI. All rights reserved. Built with ❤️ for the future of
           automation.

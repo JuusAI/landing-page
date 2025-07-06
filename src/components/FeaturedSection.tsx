@@ -33,7 +33,7 @@ const FeaturedSection = () => {
       className="relative md:h-[50vh] h-[60vh] md:py-20 py-1 px-4 futuristic-bg-alt z-10"
     >
       <div ref={titleRef} className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center text-center md:text-left md:my-16 mt-16 mb-3">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center text-center md:text-left md:mt-16 mt-10 mb-3">
           <h1 className="md:block hidden text-5xl md:text-3xl lg:text-5xl font-light tracking-tighter md:mb-8 leading-tight text-gray-900">
             Grow <span className="text-gradient">Smarter and Scale</span>
             <br />
