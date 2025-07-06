@@ -81,8 +81,8 @@ const Index = () => {
             panel.offsetHeight < window.innerHeight
               ? "top top"
               : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
-          pin: true,
-          pinSpacing: false,
+          // pin: true,
+          // pinSpacing: false,
         });
       }
     });
