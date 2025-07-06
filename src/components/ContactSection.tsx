@@ -192,7 +192,15 @@ const ContactSection = () => {
           </a>
           <div className="glass-card p-6">
             <i className="ph-light ph-map-pin text-2xl text-green-600 mb-3 block"></i>
-            <div className="text-gray-700 font-light">Dubai UAE</div>
+            <div className="text-gray-700 font-light flex justify-center gap-1">
+              Switzerland
+              <img
+                width="24"
+                height="24"
+                src="https://img.icons8.com/emoji/48/switzerland-emoji.png"
+                alt="switzerland-emoji"
+              />
+            </div>
           </div>
         </div>
       </div>
