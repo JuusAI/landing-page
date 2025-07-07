@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
           shape,
           {
             strokeDashoffset: 0,
-            duration: 5,
+            duration: 3,
             ease: "power2.out",
           },
           i * 0.5 // staggered delay
@@ -182,7 +182,7 @@ const HowItWorksSection = () => {
                               animationDelay: `${index * 0.5}s`,
                             }}
                           />
-                          <rect
+                          {/* <rect
                             x="1"
                             y="1"
                             width="98"
@@ -194,7 +194,7 @@ const HowItWorksSection = () => {
                             style={{
                               animationDelay: `${index * 0.5}s`,
                             }}
-                          />
+                          /> */}
                         </svg>
                         <div className="relative z-10 w-full h-full flex items-center justify-center">
                           <i
