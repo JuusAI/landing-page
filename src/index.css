@@ -394,7 +394,7 @@
   stroke-dashoffset: 400;
   stroke-width: 5px;
   fill: transparent;
-  stroke: #19f6e8;
+  stroke: #2563eb;
   border-bottom: 5px solid black;
 }
 
@@ -404,4 +404,18 @@
 
 .shape2 {
   stroke-dashoffset: -400;
+}
+
+.text-highlight {
+  position: relative;
+}
+
+.text-highlight .underline {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  animation: glow-underline 1.5s linear infinite;
 }

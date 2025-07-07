@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import Spline from "@splinetool/react-spline";
 import gsap from "gsap";
 import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const FeaturesSection = () => {
   const cardsRef = useRef([]);
@@ -88,15 +89,27 @@ const FeaturesSection = () => {
             What We Offer
           </span>
         </div>
-        <div ref={titleRef} className="md:flex text-center md:text-left mb-10 md:mb-20">
+        <div
+          ref={titleRef}
+          className="md:flex text-center md:text-left mb-10 md:mb-20"
+        >
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6 text-gray-900">
             DISCOVER OUR <br />
             <span className="text-gradient">WORK</span>
           </h2>
           <p className="text-xl md:text-2xl font-light text-gray-600 max-w-2xl mx-auto md:mx-0 md:ml-24">
-            We have delivered for clients across diverse industries and
-            geographies, including those in the European Union, USA, Canada,
-            Dubai, Monaco, UK, Germany, and Switzerland.
+            We have delivered for clients across{" "}
+            <span className="text-highlight">
+              diverse industries
+              <span className="underline shadow-[0_0_3px] bg-purple-600 shadow-purple-600" />
+            </span>{" "}
+            and{" "}
+            <span className="text-highlight">
+              geographies
+              <span className="underline shadow-[0_0_3px] bg-purple-600 shadow-purple-600" />
+            </span>{" "}
+            , including those in the European Union, USA, Canada, Dubai, Monaco,
+            UK, Germany, and Switzerland.
           </p>
         </div>
 

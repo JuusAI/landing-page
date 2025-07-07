@@ -123,8 +123,24 @@ const HeroSection = () => {
         </h1>
 
         <p className="text-xl md:text-2xl font-light text-gray-600 mb-12 max-w-3xl text-center md:text-left">
-          Let us help you optimize <br /> your operations, boost productivity,
-          <br /> and surpass competitors with <br /> intelligent AI tools
+          Let us help you optimize <br /> your{" "}
+          <span className="text-highlight">
+            operations
+            <span className="underline shadow-[0_0_3px] bg-blue-600 shadow-blue-600" />
+          </span>
+          , boost{" "}
+          <span className="text-highlight">
+            productivity
+            <span className="underline shadow-[0_0_3px] bg-blue-600 shadow-blue-600" />
+          </span>
+          ,
+          <br /> and{" "}
+          <span className="text-highlight">
+            surpass competitors
+            <span className="underline shadow-[0_0_3px] bg-blue-600 shadow-blue-600" />
+          </span>{" "}
+          with <br />
+          intelligent AI tools
         </p>
       </div>
 

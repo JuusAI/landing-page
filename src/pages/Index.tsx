@@ -86,6 +86,26 @@ const Index = () => {
         });
       }
     });
+
+    gsap.utils.toArray<HTMLElement>(".text-highlight").forEach((highlight) => {
+      const underline = highlight.querySelector(".underline");
+
+      gsap.fromTo(
+        underline,
+        { scaleX: 0, transformOrigin: "left" },
+        {
+          scaleX: 1,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: highlight,
+            start: "top 80%",
+            end: "top 30%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    });
   });
 
   useEffect(() => {
