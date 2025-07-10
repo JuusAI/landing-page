@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 const HowItWorksSection = () => {
   const cardRefs = useRef([]);
   const sectionRef = useRef(null);
-  // 110% 80 50%
+
   useGSAP(() => {
     cardRefs.current.forEach((card, index) => {
       const shape1s = card.querySelectorAll(".shape1");
@@ -18,7 +18,7 @@ const HowItWorksSection = () => {
           start: `top+=${110 * index}% 80%`,
           end: `+=700`,
           toggleActions: "play reverse play reverse",
-          markers: true,
+          // markers: true,
           // once: true,
         },
       });
@@ -47,6 +47,49 @@ const HowItWorksSection = () => {
         );
       });
     });
+
+    gsap.utils.toArray<HTMLElement>(".text-highlight2").forEach((highlight) => {
+      const underline = highlight.querySelector(".underline2");
+
+      gsap.fromTo(
+        underline,
+        { scaleX: 0, transformOrigin: "left" },
+        {
+          scaleX: 1,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: highlight,
+            start: "top 80%",
+            end: "+=2300",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    });
+
+    const wfButton = document.querySelector(".wfButton");
+
+    gsap.fromTo(
+      wfButton,
+      {
+        opacity: 0,
+        y: 80,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "bottom+=110% top",
+          end: "bottom+=210% top",
+          markers: true,
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
   }, []);
 
   const steps = [
@@ -86,8 +129,8 @@ const HowItWorksSection = () => {
       ],
       title: "Customer Data Synchronization",
       description:
-        "This workflow manages customer data across multiple platforms, such as a CRM, a customer support system, and a central database, keeping everything updated manually is time-consuming and error-prone.",
-      image: "/workflow3.png",
+        "This workflow manages customer data across multiple platforms, such as a CRM, a customer support system, and a central database, keeping everything updated while saving time and preventing errors.",
+      image: "/wf3.png",
     },
   ];
 
@@ -95,7 +138,7 @@ const HowItWorksSection = () => {
     <section
       id="workflow"
       ref={sectionRef}
-      className="panel workflow min-h-screen h-auto pt-24 md:pt-24 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
+      className="panel workflow min-h-screen h-auto pt-24 md:pt-28 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
     >
       {/* <div className="progress-container relative flex flex-col align-middle text-center">
         <div className="progress-point text-black my-auto" data-step="1">
@@ -113,22 +156,22 @@ const HowItWorksSection = () => {
 
       <div className="max-w-7xl mx-auto h-full flex flex-col">
         <div className="text-center">
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-light tracking-tight border border-yellow-500/30">
               What We Do
             </span>
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-5xl font-light tracking-tighter md:mb-6 mb-3 text-gray-900">
             Our <span className="text-gradient">Workflow</span>
           </h2>
           <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
             {/* Our workflows to revolutionize your business with AI automation */}
             Here are 3 examples of recent workflows that we implemented into a
-            business saving them 11 hours per week
-            {/* <span className="text-highlight">
+            business saving them{" "}
+            <span className="text-highlight2">
               11 hours per week
-              <span className="underline shadow-[0_0_3px] bg-yellow-500 shadow-yellow-500/20" />
-            </span> */}
+              <span className="underline2 shadow-[0_0_3px] bg-yellow-500 shadow-yellow-500/20" />
+            </span>
             .
           </p>
         </div>
@@ -221,7 +264,7 @@ const HowItWorksSection = () => {
             <div className="card">6</div> */}
           </div>
         </div>
-        <div className="relative flex justify-center items-center pt-12 pb-5">
+        <div className="wfButton relative flex justify-center items-center mt-auto pb-5">
           <a href="#contact" className="glow-on-hover">
             <i className="ph-light ph-rocket-launch mr-2"></i>
             Get In Touch
