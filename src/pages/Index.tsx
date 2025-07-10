@@ -22,7 +22,7 @@ const Index = () => {
 
     panels.forEach((panel, i) => {
       if (panel.classList.contains("workflow")) {
-        gsap.set(".card:not(:last-child)", {
+        gsap.set(".card", {
           transformStyle: "preserve-3d",
           transformPerspective: 1920,
           transformOrigin: "center top",
@@ -45,6 +45,8 @@ const Index = () => {
             trigger: ".workflow",
             pin: true,
             scrub: 1,
+            start: "top top",
+            end: "+=2000",
           },
         });
         const cards = document.querySelectorAll(".card");
@@ -64,7 +66,6 @@ const Index = () => {
           ".card",
           {
             rotationX: -20,
-            opacity: 0.9,
             scale: (index) => {
               return scaleMax(index);
             },

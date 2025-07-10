@@ -11,13 +11,14 @@ const HowItWorksSection = () => {
     cardRefs.current.forEach((card, index) => {
       const shape1s = card.querySelectorAll(".shape1");
       const shape2s = card.querySelectorAll(".shape2");
-
+      // 80 20
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: card,
-          start: `top ${110 - 30 * index}%`,
+          start: `top+=${110 * index}% 80%`,
+          end: `+=700`,
           toggleActions: "play reverse play reverse",
-          // markers: true,
+          markers: true,
           // once: true,
         },
       });
@@ -94,7 +95,7 @@ const HowItWorksSection = () => {
     <section
       id="workflow"
       ref={sectionRef}
-      className="panel workflow min-h-screen pt-24 md:pt-32 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
+      className="panel workflow min-h-screen h-auto pt-24 md:pt-24 pb-3 px-4 relative futuristic-bg snap-align-none snap-normal snap-none"
     >
       {/* <div className="progress-container relative flex flex-col align-middle text-center">
         <div className="progress-point text-black my-auto" data-step="1">
@@ -110,7 +111,7 @@ const HowItWorksSection = () => {
         </div>
       </div> */}
 
-      <div className="max-w-7xl mx-auto h-full">
+      <div className="max-w-7xl mx-auto h-full flex flex-col">
         <div className="text-center">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-light tracking-tight border border-yellow-500/30">
@@ -121,7 +122,14 @@ const HowItWorksSection = () => {
             Our <span className="text-gradient">Workflow</span>
           </h2>
           <p className="text-xl font-light text-gray-600 max-w-2xl mx-auto">
-            Our workflows to revolutionize your business with AI automation
+            {/* Our workflows to revolutionize your business with AI automation */}
+            Here are 3 examples of recent workflows that we implemented into a
+            business saving them 11 hours per week
+            {/* <span className="text-highlight">
+              11 hours per week
+              <span className="underline shadow-[0_0_3px] bg-yellow-500 shadow-yellow-500/20" />
+            </span> */}
+            .
           </p>
         </div>
 
@@ -212,6 +220,12 @@ const HowItWorksSection = () => {
             <div className="card">5</div>
             <div className="card">6</div> */}
           </div>
+        </div>
+        <div className="relative flex justify-center items-center pt-12 pb-5">
+          <a href="#contact" className="glow-on-hover">
+            <i className="ph-light ph-rocket-launch mr-2"></i>
+            Get In Touch
+          </a>
         </div>
       </div>
     </section>
