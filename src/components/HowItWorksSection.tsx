@@ -85,7 +85,7 @@ const HowItWorksSection = () => {
           trigger: sectionRef.current,
           start: "bottom+=110% top",
           end: "bottom+=210% top",
-          markers: true,
+          // markers: true,
           toggleActions: "play reverse play reverse",
         },
       }
