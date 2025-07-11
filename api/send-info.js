@@ -8,12 +8,12 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { to, subject, html } = req.body;
+  const { subject, html } = req.body;
 
   try {
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to,
+      from: "Team JUUS <hello@team.juus.ai>",
+      to: "juusaiteam@gmail.com",
       subject,
       html,
     });

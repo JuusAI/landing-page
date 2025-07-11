@@ -62,7 +62,6 @@ const ContactSection = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: form.email, // Or dynamically set if needed
           subject: `New Contact from ${form.name}`,
           html: `
   <html>
