@@ -1,6 +1,7 @@
 import { render } from "@react-email/render";
 import { useState } from "react";
 import ConfirmationEmail from "./emails/ContactEmail";
+import { renderToString } from "react-dom/server";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -24,7 +25,7 @@ const ContactSection = () => {
     }
 
     try {
-      const emailHTML = await render(
+      const emailHTML = renderToString(
         ConfirmationEmail({
           name: form.name,
         })
