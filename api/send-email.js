@@ -50,9 +50,9 @@ export default async function handler(req, res) {
       },
       (error, info) => {
         if (error) {
-          return console.log("Error sending email:", error);
+          res.status(500).json({ error: error.message });
         }
-        console.log("Message sent:", info.messageId);
+        res.status(200).json({ success: true, info });
       }
     );
   })();
