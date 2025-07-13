@@ -3,6 +3,7 @@ import ConfirmationEmail from "./emails/ContactEmail";
 import { renderToString } from "react-dom/server";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -12,7 +13,6 @@ const ContactSection = () => {
     message: "",
   });
 
-  const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -49,21 +49,24 @@ const ContactSection = () => {
       const data = await res.json();
       if (data.success) {
         setSubmitting(false);
-        toast({ title: "Success", description: "Your message has been sent!" });
+        toast.success("Success", {
+          description: "Your message has been sent!",
+          position: "bottom-right",
+        });
         setForm({ name: "", email: "", company: "", message: "" });
       } else {
         setSubmitting(false);
-        toast({
-          title: "Error",
+        toast.warning("Error", {
           description: "Something went wrong. Try again.",
+          position: "bottom-right",
         });
         console.error(data.error);
       }
     } catch (err) {
       setSubmitting(false);
-      toast({
-        title: "Error",
+      toast.warning("Error", {
         description: "Something went wrong. Try again.",
+        position: "bottom-right",
       });
       console.error("Email failed to send:", err);
     }
@@ -100,9 +103,9 @@ const ContactSection = () => {
       });
     } catch (err) {
       setSubmitting(false);
-      toast({
-        title: "Error",
+      toast.warning("Error", {
         description: "Something went wrong. Try again.",
+        position: "bottom-right",
       });
       console.error("Email failed to send:", err);
     }
