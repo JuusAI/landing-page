@@ -2,6 +2,7 @@ import { useState } from "react";
 import ConfirmationEmail from "./emails/ContactEmail";
 import { renderToString } from "react-dom/server";
 import { useToast } from "@/hooks/use-toast";
+import { Loader2 } from "lucide-react";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -12,6 +13,7 @@ const ContactSection = () => {
   });
 
   const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +27,7 @@ const ContactSection = () => {
     }
 
     try {
+      setSubmitting(true);
       const emailHTML = renderToString(
         ConfirmationEmail({
           name: form.name,
@@ -45,9 +48,11 @@ const ContactSection = () => {
 
       const data = await res.json();
       if (data.success) {
+        setSubmitting(false);
         toast({ title: "Success", description: "Your message has been sent!" });
         setForm({ name: "", email: "", company: "", message: "" });
       } else {
+        setSubmitting(false);
         toast({
           title: "Error",
           description: "Something went wrong. Try again.",
@@ -55,6 +60,7 @@ const ContactSection = () => {
         console.error(data.error);
       }
     } catch (err) {
+      setSubmitting(false);
       toast({
         title: "Error",
         description: "Something went wrong. Try again.",
@@ -93,6 +99,7 @@ const ContactSection = () => {
         }),
       });
     } catch (err) {
+      setSubmitting(false);
       toast({
         title: "Error",
         description: "Something went wrong. Try again.",
@@ -170,8 +177,15 @@ const ContactSection = () => {
             />
           </div>
 
-          <button className="neuro-button w-full md:w-auto" onClick={sendEmail}>
-            <i className="ph-light ph-paper-plane-tilt mr-2"></i>
+          <button
+            className="neuro-button w-full md:w-auto flex gap-3 mx-auto items-center"
+            onClick={sendEmail}
+          >
+            {submitting ? (
+              <Loader2 className="animate-spin w-5 h-5" />
+            ) : (
+              <i className="ph-light ph-paper-plane-tilt"></i>
+            )}
             Start Your AI Journey
           </button>
         </div>
