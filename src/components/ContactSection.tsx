@@ -22,7 +22,10 @@ const ContactSection = () => {
 
   const sendEmail = async () => {
     if (!form.name || !form.email || !form.message) {
-      alert("Please fill in all required fields.");
+      toast.warning("Error", {
+        description: "Please fill in all required fields.",
+        position: "bottom-right",
+      });
       return;
     }
 
