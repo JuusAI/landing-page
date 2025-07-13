@@ -1,7 +1,4 @@
-// api/send-email.js
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { createTransport } from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -10,16 +7,30 @@ export default async function handler(req, res) {
 
   const { subject, html } = req.body;
 
-  try {
-    const data = await resend.emails.send({
-      from: "Team JUUS <hello@juus.ai>",
-      to: "juusaiteam@gmail.com",
-      subject,
-      html,
-    });
+  const transporter = createTransport({
+    host: "smtpout.secureserver.net",
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: process.env.GODADDY_EMAIL,
+      pass: process.env.GODADDY_PW,
+    },
+  });
 
-    res.status(200).json({ success: true, data });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
+  (async () => {
+    await transporter.sendMail(
+      {
+        from: '"Juus AI" <hello@juus.ai>',
+        to: "hello@juus.ai",
+        subject,
+        html,
+      },
+      (error, info) => {
+        if (error) {
+          res.status(500).json({ error: error.message });
+        }
+        res.status(200).json({ success: true, info });
+      }
+    );
+  })();
 }

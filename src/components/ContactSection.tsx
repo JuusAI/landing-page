@@ -1,7 +1,7 @@
-import { render } from "@react-email/render";
 import { useState } from "react";
 import ConfirmationEmail from "./emails/ContactEmail";
 import { renderToString } from "react-dom/server";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -11,7 +11,7 @@ const ContactSection = () => {
     message: "",
   });
 
-  const [status, setStatus] = useState(null); // success | error | null
+  const { toast } = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,14 +45,20 @@ const ContactSection = () => {
 
       const data = await res.json();
       if (data.success) {
-        setStatus("success");
+        toast({ title: "Success", description: "Your message has been sent!" });
         setForm({ name: "", email: "", company: "", message: "" });
       } else {
-        setStatus("error");
+        toast({
+          title: "Error",
+          description: "Something went wrong. Try again.",
+        });
         console.error(data.error);
       }
     } catch (err) {
-      setStatus("error");
+      toast({
+        title: "Error",
+        description: "Something went wrong. Try again.",
+      });
       console.error("Email failed to send:", err);
     }
   };
@@ -87,7 +93,10 @@ const ContactSection = () => {
         }),
       });
     } catch (err) {
-      setStatus("error");
+      toast({
+        title: "Error",
+        description: "Something went wrong. Try again.",
+      });
       console.error("Email failed to send:", err);
     }
   };
@@ -165,15 +174,6 @@ const ContactSection = () => {
             <i className="ph-light ph-paper-plane-tilt mr-2"></i>
             Start Your AI Journey
           </button>
-
-          {status === "success" && (
-            <p className="mt-4 text-green-600">Your message has been sent!</p>
-          )}
-          {status === "error" && (
-            <p className="mt-4 text-red-600">
-              Something went wrong. Try again.
-            </p>
-          )}
         </div>
 
         {/* Contact Info */}
