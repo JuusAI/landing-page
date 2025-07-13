@@ -3,7 +3,7 @@ import ConfirmationEmail from "./emails/ContactEmail";
 import { renderToString } from "react-dom/server";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -119,6 +119,7 @@ const ContactSection = () => {
       id="contact"
       className="panel pt-24 md:py-32 px-4 relative futuristic-bg"
     >
+      <Toaster position="bottom-right" richColors />
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-12">
           <span className="inline-block px-4 py-2 bg-green-500/20 text-green-600 rounded-full text-sm font-light tracking-tight border border-green-500/30">
