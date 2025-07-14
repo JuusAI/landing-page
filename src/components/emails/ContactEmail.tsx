@@ -29,16 +29,6 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
             <Text style={styles.paragraph}>
               Thanks for reaching out to <strong>Juus AI</strong>.
             </Text>
-            <Text style={styles.paragraph}>
-              Your message has been received, and our AI experts are reviewing
-              it. One of our team members will be in touch within the next 6 -
-              12 hours to discuss how we can help automate and accelerate your
-              business.
-            </Text>
-            <Text style={styles.paragraph}>
-              We look forward to connecting with you. 🚀
-            </Text>
-            <Text style={styles.signature}>— The Juus AI Team</Text>
           </Container>
         </Section>
       </Body>
