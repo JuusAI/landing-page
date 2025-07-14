@@ -139,7 +139,8 @@ const styles = {
 
 const container = {
   backgroundColor: "#ffffff",
-  padding: "0px",
+  padding: "20px",
+  textAlign: "left",
 };
 
 const table = {
