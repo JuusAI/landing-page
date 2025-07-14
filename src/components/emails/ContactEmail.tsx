@@ -40,7 +40,7 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
         </Container>
       </Section>
       <Section>
-        <Container style={container as React.CSSProperties}>
+        <Container style={container}>
           <table cellPadding="0" cellSpacing="0" style={table}>
             <tbody>
               <tr>
@@ -140,12 +140,11 @@ const styles = {
 const container = {
   backgroundColor: "#ffffff",
   padding: "20px",
-  textAlign: "left",
+  margin: 0,
 };
 
 const table = {
   width: "100%",
-  textAlign: "left",
 };
 
 const nameStyle = {
