@@ -24,6 +24,12 @@ const Navigation = ({ activeSection }: NavigationProps) => {
     { name: "WORKFLOW", href: "#workflow", id: "workflow" },
   ];
 
+  const navItemsMobile = [
+    { name: "HOME", href: "#featured", id: "featured" },
+    { name: "SERVICES", href: "#hero", id: "hero" },
+    { name: "WORKFLOW", href: "#workflow", id: "workflow" },
+  ];
+
   return (
     <>
       <nav
@@ -108,7 +114,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
       >
         <div className="p-6 pt-20">
           <div className="space-y-6">
-            {navItems.map((item) => (
+            {navItemsMobile.map((item) => (
               <a
                 key={item.name}
                 href={item.href}

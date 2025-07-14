@@ -13,6 +13,7 @@ const ContactSection = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -51,6 +52,7 @@ const ContactSection = () => {
 
       const data = await res.json();
       if (data.success) {
+        setStatus("success");
         setSubmitting(false);
         toast.success("Success", {
           description: "Your message has been sent!",
@@ -58,6 +60,7 @@ const ContactSection = () => {
         });
         setForm({ name: "", email: "", company: "", message: "" });
       } else {
+        setStatus("error");
         setSubmitting(false);
         toast.warning("Error", {
           description: "Something went wrong. Try again.",
@@ -66,6 +69,7 @@ const ContactSection = () => {
         console.error(data.error);
       }
     } catch (err) {
+      setStatus("error");
       setSubmitting(false);
       toast.warning("Error", {
         description: "Something went wrong. Try again.",
@@ -105,6 +109,7 @@ const ContactSection = () => {
         }),
       });
     } catch (err) {
+      setStatus("error");
       setSubmitting(false);
       toast.warning("Error", {
         description: "Something went wrong. Try again.",
@@ -195,6 +200,15 @@ const ContactSection = () => {
             )}
             Start Your AI Journey
           </button>
+
+          {status === "success" && (
+            <p className="mt-4 text-green-600">Your message has been sent!</p>
+          )}
+          {status === "error" && (
+            <p className="mt-4 text-red-600">
+              Something went wrong. Try again.
+            </p>
+          )}
         </div>
 
         {/* Contact Info */}
