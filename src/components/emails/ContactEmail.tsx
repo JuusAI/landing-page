@@ -22,13 +22,7 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
     <Html>
       <Head />
       <Preview>We’ve received your message — Juus AI</Preview>
-      <Body>
-        <Section style={styles.main}>
-          <Container style={styles.container}>
-            <Heading style={styles.heading}>Hello {name || "there"},</Heading>
-          </Container>
-        </Section>
-      </Body>
+      <Body>Hi</Body>
     </Html>
   );
 };
