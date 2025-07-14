@@ -8,6 +8,8 @@ import {
   Text,
   Container,
   Heading,
+  Link,
+  Img,
 } from "@react-email/components";
 
 interface ConfirmationEmailProps {
@@ -27,13 +29,72 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
           </Text>
           <Text style={styles.paragraph}>
             Your message has been received, and our AI experts are reviewing it.
-            One of our team members will be in touch within the next 6 - 12 hours to
-            discuss how we can help automate and accelerate your business.
+            One of our team members will be in touch within the next 6 - 12
+            hours to discuss how we can help automate and accelerate your
+            business.
           </Text>
           <Text style={styles.paragraph}>
             We look forward to connecting soon. 🚀
           </Text>
           <Text style={styles.signature}>— The Juus AI Team</Text>
+        </Container>
+        <Container style={container}>
+          <table cellPadding="0" cellSpacing="0" style={table}>
+            <tbody>
+              <tr>
+                <td style={{ paddingRight: "15px" }}>
+                  <Img
+                    src="https://am1.myprofessionalmail.com/appsuite/api/image/snippet/image?id=1&uid=a89e996f-bd82-4f13-a6ba-42b2970927f4"
+                    width="140"
+                    height="140"
+                    alt="John Doe"
+                    style={{ maxWidth: "100%" }}
+                  />
+                </td>
+                <td>
+                  <Text style={nameStyle}>John Doe</Text>
+                  <Text style={title}>Automation Consultant</Text>
+                  <Text style={company}>JUUS AI</Text>
+                  <Text style={line}>
+                    📧{" "}
+                    <Link href="mailto:hello@juus.ai" style={link}>
+                      hello@juus.ai
+                    </Link>
+                  </Text>
+                  <Text style={line}>
+                    🌐{" "}
+                    <Link href="https://www.juus.ai" style={link}>
+                      www.juus.ai
+                    </Link>
+                  </Text>
+                  <Text style={line}>
+                    📅{" "}
+                    <Link href="https://yourcalendarlink.com" style={link}>
+                      Schedule a Call
+                    </Link>
+                  </Text>
+                  <Text style={line}>
+                    <Link
+                      href="https://img.icons8.com/?size=100&id=32323&format=png&color=000000"
+                      style={link}
+                    >
+                      <Img
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                        width="18"
+                        alt="Instagram"
+                        style={{
+                          verticalAlign: "middle",
+                          marginRight: "4px",
+                          display: "inline-block",
+                        }}
+                      />
+                      Follow us on Instagram
+                    </Link>
+                  </Text>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </Container>
       </Section>
     </Html>
@@ -75,4 +136,35 @@ const styles = {
     color: "#64748b", // slate-500
     marginTop: "28px",
   },
+};
+
+const container = {
+  padding: "20px",
+};
+
+const table = {
+  width: "100%",
+};
+
+const nameStyle = {
+  margin: "0",
+  fontWeight: "bold",
+  fontSize: "16px",
+};
+
+const title = {
+  margin: "2px 0",
+};
+
+const company = {
+  margin: "2px 0",
+};
+
+const line = {
+  margin: "6px 0",
+};
+
+const link = {
+  color: "#0073e6",
+  textDecoration: "none",
 };
