@@ -38,13 +38,15 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
           </Text>
           <Text style={styles.signature}>— The Juus AI Team</Text>
         </Container>
+      </Section>
+      <Section>
         <Container style={container}>
           <table cellPadding="0" cellSpacing="0" style={table}>
             <tbody>
               <tr>
                 <td style={{ paddingRight: "15px" }}>
                   <Img
-                    src="/square-logo.png"
+                    src="https://rf22perauprm1rzu.public.blob.vercel-storage.com/unnamed-no-bg2.png"
                     width="140"
                     height="140"
                     alt="John Doe"
