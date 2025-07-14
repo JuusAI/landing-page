@@ -34,7 +34,7 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
             business.
           </Text>
           <Text style={styles.paragraph}>
-            We look forward to connecting soon. 🚀
+            We look forward to connecting with you. 🚀
           </Text>
           <Text style={styles.signature}>— The Juus AI Team</Text>
         </Container>
