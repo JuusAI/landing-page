@@ -44,7 +44,7 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
               <tr>
                 <td style={{ paddingRight: "15px" }}>
                   <Img
-                    src="https://am1.myprofessionalmail.com/appsuite/api/image/snippet/image?id=1&uid=a89e996f-bd82-4f13-a6ba-42b2970927f4"
+                    src="/square-logo.png"
                     width="140"
                     height="140"
                     alt="John Doe"
@@ -74,12 +74,9 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
                     </Link>
                   </Text>
                   <Text style={line}>
-                    <Link
-                      href="https://img.icons8.com/?size=100&id=32323&format=png&color=000000"
-                      style={link}
-                    >
+                    <Link href="https://instagram.com/juus.ai" style={link}>
                       <Img
-                        src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                        src="https://img.icons8.com/?size=100&amp;id=32323&amp;format=png&amp;color=000000"
                         width="18"
                         alt="Instagram"
                         style={{
@@ -139,7 +136,8 @@ const styles = {
 };
 
 const container = {
-  padding: "20px",
+  backgroundColor: "#ffffff",
+  padding: "0px",
 };
 
 const table = {
