@@ -26,9 +26,6 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
         <Section style={styles.main}>
           <Container style={styles.container}>
             <Heading style={styles.heading}>Hello {name || "there"},</Heading>
-            <Text style={styles.paragraph}>
-              Thanks for reaching out to <strong>Juus AI</strong>.
-            </Text>
           </Container>
         </Section>
       </Body>
