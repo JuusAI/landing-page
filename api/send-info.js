@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         from: '"Juus AI" <hello@juus.ai>',
         to: "hello@juus.ai",
         subject,
-        html: `${html} <br /> ${email_signature}`,
+        html,
       },
       (error, info) => {
         if (error) {
