@@ -4,6 +4,7 @@ import { renderToString } from "react-dom/server";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { toast, Toaster } from "sonner";
+import { PopupWidget } from "react-calendly";
 
 const ContactSection = () => {
   const [form, setForm] = useState({
@@ -210,6 +211,14 @@ const ContactSection = () => {
             </p>
           )}
         </div>
+
+        <PopupWidget
+          url="https://calendly.com/juusaiteam/30min"
+          rootElement={document.getElementById("root")}
+          text="Schedule a call with us now!"
+          textColor="#fff"
+          color="#2563eb"
+        />
 
         {/* Contact Info */}
         <div className="grid md:grid-cols-3 gap-8 text-center">

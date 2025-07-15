@@ -74,7 +74,10 @@ export const ConfirmationEmail = ({ name }: ConfirmationEmailProps) => {
                     </Text>
                     <Text style={line}>
                       📅{" "}
-                      <Link href="https://yourcalendarlink.com" style={link}>
+                      <Link
+                        href="https://calendly.com/juusaiteam/30min"
+                        style={link}
+                      >
                         Schedule a Call
                       </Link>
                     </Text>
