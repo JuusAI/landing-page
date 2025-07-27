@@ -8,9 +8,9 @@ export default async function handler(req, res) {
   const { to, subject, html } = req.body;
 
   const transporter = createTransport({
-    host: "smtpout.secureserver.net",
-    port: 465,
-    secure: true, // true for 465, false for other ports
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
     auth: {
       user: process.env.GODADDY_EMAIL,
       pass: process.env.GODADDY_PW,
